@@ -1,0 +1,11 @@
+<!--<div style="float: left">
+                                <h3 style="color: #ffffff">
+                                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                </h3>
+                                <div>
+                                    <p id="paragraph" runat="server">
+                                    </p>
+                                    <!--<asp:Image ID="Image1" runat="server"/>
+                                    <asp:Label ID="Label2" runat="server" Text="Label" Style="width:100%; height:100%"></asp:Label>
+                                </div>
+                            </div>-->

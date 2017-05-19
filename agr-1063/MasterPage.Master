@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="agr_1063.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/business-casual.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="Body" runat="server">
+    <!--<div class="brand">Comunidade 28</div>
+    <div class="aomddress-bar">Agrupamento 1063 | Fragosela </div>-->
+    <form id="form1" runat="server">
+        <div>
+            <!--Menu-->
+            <nav class="navbar navbar-default" style="opacity: 1">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="minhaBarra">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="Index.aspx">HOME</a>
+                            </li>
+                            <!--Login/Logout-->
+                            <%if (Session["nome"] == null)
+                                {%>
+                            <li>
+                                <a href="Login.aspx">Login</a>
+                            </li>
+                            <%}
+                                else
+                                {%>
+                            <li>
+                                <a href="Perfil.aspx">Perfil</a>
+                            </li>
+                            <%
+                                //Chefes
+                                if (Session["tipo"].Equals("0"))
+                                {%>
+                            <li>
+                                <a href="Utilizadores.aspx">Utilizadores</a>
+                            </li>
+                            <li>
+                                <a href="Avisos.aspx">Avisos/Noticias</a>
+                            </li>
+                            <%}
+                                //Geral
+                                else if (Session["tipo"].Equals("1"))
+                                {
+                                    //lobitos
+                                    if (Session["sec"].Equals("1"))
+                                    {%>
+                                        
+                                    <%}
+                                    //Exploradores
+                                    else if (Session["sec"].Equals("2"))
+                                    {%>
+                                        
+                                    <%}
+                                    //Pioneiros
+                                    else if (Session["sec"].Equals("3"))
+                                    {%>
+                                        
+                                    <%}
+                                    //Caminheiros
+                                    else if (Session["sec"].Equals("4"))
+                                    {%>
+                                       
+                                    <%}%>
+                            <%}%>
+                            <li>
+                                <a href="Logout.aspx">Logout/Sair</a>
+                            </li>
+                            <%}%>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--Menu-->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

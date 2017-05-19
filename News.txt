@@ -1,0 +1,75 @@
+<table style="width: 100%; height: 100%; align: center;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h3 style="color: white">
+                                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                        </h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Image ID="Image1" runat="server" />
+                                    </td>
+                                    <td style="word-break:break-word">
+                                        <div class="container" style="height:100%; word-break:break-word">
+                                            <p id="paragraph" runat="server" style="color: white; word-wrap:break-word">
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #ffffff">
+                            <!--<asp:Image ID="Image2" runat="server" ImageUrl="~/img/osu.png" />-->
+
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="float: left">
+                                <h3 style="color: #ffffff">
+                                    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+
+                                </h3>
+                                <div>
+                                    <asp:Image ID="Image3" runat="server" ImageUrl="~/img/osu.png" />
+                                    <asp:Label Style="word-break:break-word" ID="Label4" runat="server" Text="Label"></asp:Label>
+                                    <br />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="align-items: center">
+                            <asp:ImageButton ID="ibtnLeft" runat="server" ImageUrl="~/img/Left.ico" Width="20px" Height="20px" OnClick="ibtnLeft_Click" /><asp:ImageButton ID="ibtnRight" runat="server" ImageUrl="~/img/Right.ico" Width="20px" Height="20px" OnClick="ibtnRight_Click" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
