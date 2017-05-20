@@ -62,7 +62,7 @@ namespace agr_1063
                 {
                     if (FUim.PostedFile.ContentLength > 0)
                     {
-                        string caminho = Server.MapPath(@"..\imagens\news");
+                        string caminho = Server.MapPath(@"~\imagens\news");
                         caminho += "\\" + id + ".jpg";
                         FUim.SaveAs(caminho);
                     }
