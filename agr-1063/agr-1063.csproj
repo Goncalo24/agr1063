@@ -68,7 +68,7 @@
   <ItemGroup>
     <Content Include="Aceitar_Rejeitar.aspx" />
     <Content Include="Ativar_Desativar.aspx" />
-    <Content Include="Avisos-Sec.aspx" />
+    <Content Include="Ver_Aviso.aspx" />
     <Content Include="Avisos.aspx" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -123,12 +123,12 @@
     <Compile Include="Ativar_Desativar.aspx.designer.cs">
       <DependentUpon>Ativar_Desativar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Avisos-Sec.aspx.cs">
-      <DependentUpon>Avisos-Sec.aspx</DependentUpon>
+    <Compile Include="Ver_Aviso.aspx.cs">
+      <DependentUpon>Ver_Aviso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Avisos-Sec.aspx.designer.cs">
-      <DependentUpon>Avisos-Sec.aspx</DependentUpon>
+    <Compile Include="Ver_Aviso.aspx.designer.cs">
+      <DependentUpon>Ver_Aviso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Avisos.aspx.cs">
       <DependentUpon>Avisos.aspx</DependentUpon>

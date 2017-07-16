@@ -16,6 +16,10 @@ namespace agr_1063
         protected void Page_Load(object sender, EventArgs e)
         {
             CarregarNoticias();
+            
+            /*HtmlControl masterPageBody = (HtmlControl)Master.FindControl("Body");
+            masterPageBody.Style.Remove("background-image");
+            masterPageBody.Style.Add("background-image", "/img/" + sec + ".jpg");*/
         }
 
         protected void CarregarNoticias()
@@ -70,14 +74,14 @@ namespace agr_1063
             //bfNome.HeaderText = "Nome";
             GridView1.Columns.Add(bfNome);
 
-            //comprar
-            HyperLinkField lnkcomprar = new HyperLinkField();
+            //ver
+            HyperLinkField lnkver = new HyperLinkField();
             // lnkcomprar.HeaderText = "Ver";
-            lnkcomprar.DataTextField = "ver";
-            lnkcomprar.Text = "Ver";
-            //lnkcomprar.DataNavigateUrlFormatString = "loja.aspx";
-            //lnkcomprar.DataNavigateUrlFields = new string[] { "id", "preco" };
-            GridView1.Columns.Add(lnkcomprar);
+            lnkver.DataTextField = "ver";
+            lnkver.Text = "Ver";
+            lnkver.DataNavigateUrlFormatString = "Ver_Aviso.aspx?id={0}";
+            lnkver.DataNavigateUrlFields = new string[] { "idAviso" };
+            GridView1.Columns.Add(lnkver);
 
             //refresh da gridview
             GridView1.DataBind();
