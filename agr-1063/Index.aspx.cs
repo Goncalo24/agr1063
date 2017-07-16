@@ -20,8 +20,12 @@ namespace agr_1063
 
         protected void CarregarNoticias()
         {
-            DataTable dados = bd.DevolveConsulta("SELECT * FROM Avisos ORDER BY idAviso DESC");
-            // dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE Sec= " + sec + ",5 ORDER BY idAviso DESC");
+            DataTable dados;
+
+            if (Session["sec"] != null)
+                dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE Sec= " + Session["sec"] + " ORDER BY idAviso DESC");
+            else
+                dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE Sec=6 ORDER BY idAviso DESC");
 
             //limpar grelha
             GridView1.Columns.Clear();
@@ -68,7 +72,7 @@ namespace agr_1063
 
             //comprar
             HyperLinkField lnkcomprar = new HyperLinkField();
-           // lnkcomprar.HeaderText = "Ver";
+            // lnkcomprar.HeaderText = "Ver";
             lnkcomprar.DataTextField = "ver";
             lnkcomprar.Text = "Ver";
             //lnkcomprar.DataNavigateUrlFormatString = "loja.aspx";

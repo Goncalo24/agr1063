@@ -52,11 +52,12 @@ namespace agr_1063
         {
             try
             {
+                int sec = ddlsec.SelectedIndex;
                 string titulo = Server.HtmlEncode(tbTit.Text);
                 string desc = Server.HtmlEncode(taDes.Text);
                 DateTime data = DateTime.Now;
                 //Adiciona na Base de Dados
-                int id = bd.adicionarAviso(titulo, desc, data);
+                int id = bd.adicionarAviso(sec, titulo, desc, data);
                 //guardar a imagem
                 if (FUim.HasFile == true)
                 {

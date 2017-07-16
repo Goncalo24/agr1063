@@ -16,6 +16,8 @@
                 <br />
                 <br />
                 <asp:Button ID="btnlogin" runat="server" Text="Login" class="form-control" OnClick="btnlogin_Click" />
+                <br />
+                <asp:HyperLink NavigateUrl="Registo.aspx" runat="server">Registar</asp:HyperLink>
             </div>
         </div>
         <br />
