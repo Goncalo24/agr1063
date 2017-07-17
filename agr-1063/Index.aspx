@@ -100,8 +100,7 @@
     <div class="container" style="background-color: #000000; padding-bottom: 15px">
         <br />
         <footer>
-            jgjasgjwaoprgbjkwraopgjwraopjbwrohjwroigjwrohgijeroihjerogjreohijeikoyjetiohjerriohjetiohj5etioyhjr3eio5hj3re5oyj
-        bjkwraopgjwraopjbwrohjwroigjwrohgijeroihjerogjreohijeikoyjetiohjerriohjetiohj5etioyhjr3eio5hj3re5oyj
+            Copyright   /    Regulamento    /     Suporte
         </footer>
     </div>
 </asp:Content>
