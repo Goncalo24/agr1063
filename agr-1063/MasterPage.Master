@@ -55,23 +55,23 @@
                                     //lobitos
                                     if (Session["sec"].Equals("1"))
                                     {%>
-                                        
-                                    <%}
-                                    //Exploradores
-                                    else if (Session["sec"].Equals("2"))
-                                    {%>
-                                        
-                                    <%}
-                                    //Pioneiros
-                                    else if (Session["sec"].Equals("3"))
-                                    {%>
-                                        
-                                    <%}
-                                    //Caminheiros
-                                    else if (Session["sec"].Equals("4"))
-                                    {%>
-                                       
-                                    <%}%>
+
+                            <%}
+                                //Exploradores
+                                else if (Session["sec"].Equals("2"))
+                                {%>
+
+                            <%}
+                                //Pioneiros
+                                else if (Session["sec"].Equals("3"))
+                                {%>
+
+                            <%}
+                                //Caminheiros
+                                else if (Session["sec"].Equals("4"))
+                                {%>
+
+                            <%}%>
                             <%}%>
                             <li>
                                 <a href="Logout.aspx">Logout/Sair</a>
@@ -81,6 +81,7 @@
                     </div>
                 </div>
             </nav>
+
             <!--Menu-->
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
