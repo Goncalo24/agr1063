@@ -79,8 +79,8 @@ namespace agr_1063
             // lnkcomprar.HeaderText = "Ver";
             lnkver.DataTextField = "ver";
             lnkver.Text = "Ver";
-            lnkver.DataNavigateUrlFormatString = "Ver_Aviso.aspx?id={0}";
-            lnkver.DataNavigateUrlFields = new string[] { "idAviso" };
+            lnkver.DataNavigateUrlFormatString = "Ver_Aviso.aspx?id={0}&sec={0}";
+            lnkver.DataNavigateUrlFields = new string[] { "idAviso", "Sec" };
             GridView1.Columns.Add(lnkver);
 
             //refresh da gridview
