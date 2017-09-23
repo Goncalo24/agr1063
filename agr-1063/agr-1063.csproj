@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="Aceitar_Rejeitar.aspx" />
     <Content Include="Ativar_Desativar.aspx" />
+    <Content Include="Faceis.aspx" />
     <Content Include="Ver_Aviso.aspx" />
     <Content Include="Avisos.aspx" />
     <Content Include="css\bootstrap.css" />
@@ -122,6 +123,13 @@
     </Compile>
     <Compile Include="Ativar_Desativar.aspx.designer.cs">
       <DependentUpon>Ativar_Desativar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Faceis.aspx.cs">
+      <DependentUpon>Faceis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Faceis.aspx.designer.cs">
+      <DependentUpon>Faceis.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ver_Aviso.aspx.cs">
       <DependentUpon>Ver_Aviso.aspx</DependentUpon>

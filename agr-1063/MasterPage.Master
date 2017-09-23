@@ -73,7 +73,7 @@
 
                             <%}%>
                             <%}%>
-                            <li>
+                            <li align="right">
                                 <a href="Logout.aspx">Logout/Sair</a>
                             </li>
                             <%}%>
@@ -85,6 +85,12 @@
             <!--Menu-->
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+
+            <br />
+            <br />
+            <div id="footer" class="panel-footer">
+                Hu3Hu3u3Hu3Hu3
+            </div>
         </div>
     </form>
 </body>
