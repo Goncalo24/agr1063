@@ -38,6 +38,9 @@
                             <li>
                                 <a href="Perfil.aspx">Perfil</a>
                             </li>
+                            <li>
+                                <a href="Faceis.aspx">FACEIS</a>
+                            </li>
                             <%
                                 //Chefes
                                 if (Session["tipo"].Equals("0"))
@@ -73,7 +76,7 @@
 
                             <%}%>
                             <%}%>
-                            <li align="right">
+                            <li>
                                 <a href="Logout.aspx">Logout/Sair</a>
                             </li>
                             <%}%>
@@ -86,7 +89,6 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
 
-            <br />
             <br />
             <div id="footer" class="panel-footer">
                 Hu3Hu3u3Hu3Hu3
