@@ -16,6 +16,8 @@ namespace agr_1063
         BaseDados bd = new BaseDados();
         DataTable dados;
         List<string> email = new List<string>();
+        int id;
+        string file;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -56,8 +58,31 @@ namespace agr_1063
                 string titulo = Server.HtmlEncode(tbTit.Text);
                 string desc = Server.HtmlEncode(taDes.Text);
                 DateTime data = DateTime.Now;
-                //Adiciona na Base de Dados
-                int id = bd.adicionarAviso(sec, titulo, desc, data);
+
+                //guardar o Ficheiro
+                if (FUfi.HasFile == true)
+                {
+
+                    if (FUfi.PostedFile.ContentLength > 0)
+                    {
+                        file = FUfi.FileName;
+                        file = Path.ChangeExtension(file, ".pdf");
+
+                        string caminho = Server.MapPath(@"~\ficheiros");
+                        caminho += "\\" + file;
+                        FUfi.SaveAs(caminho);
+
+                        //Adiciona na Base de Dados
+                        id = bd.adicionarAviso(sec, titulo, desc, data, file);
+                    }
+                }
+                else
+                {
+                    file = null;
+                    //Adiciona na Base de Dados
+                    id = bd.adicionarAviso(sec, titulo, desc, data, file);
+                }
+
                 //guardar a imagem
                 if (FUim.HasFile == true)
                 {
@@ -68,19 +93,8 @@ namespace agr_1063
                         FUim.SaveAs(caminho);
                     }
                 }
-                //guardar o Ficheiro
-                if (FUfi.HasFile == true)
-                {
-                    if (FUfi.PostedFile.ContentLength > 0)
-                    {
-                        string file = FUfi.FileName;
-                        file = Path.ChangeExtension(file, ".pdf");
 
-                        string caminho = Server.MapPath(@"~\ficheiros");
-                        caminho += "\\(" + id + ")" + file;
-                        FUfi.SaveAs(caminho);
-                    }
-                }
+
 
                 for (int i = 0; i < email.Count; i++)
                 {

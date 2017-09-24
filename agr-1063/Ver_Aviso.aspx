@@ -27,15 +27,12 @@
                     </tr>
                     <tr>
                         <td>
-                            Ficheiro
+                            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Download Ficheiro</asp:LinkButton>
                             <br />
                         </td>
                         <td>
                             <br />
                         </td>
-                    </tr>
-                    <tr>
-
                     </tr>
                 </tbody>
             </table>

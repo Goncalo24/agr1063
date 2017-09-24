@@ -13,6 +13,7 @@ namespace agr_1063
     {
         BaseDados bd = new BaseDados();
         private int id;
+        string filename;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -55,10 +56,29 @@ namespace agr_1063
                 Label1.Text = dados.Rows[0][2].ToString();
                 paragraph.InnerText = dados.Rows[0][3].ToString(); 
                 Label5.Text = dados.Rows[0][4].ToString();
+                filename = dados.Rows[0][5].ToString();
             }
             catch (Exception)
             {
                 return;
+            }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            string Filpath = Server.MapPath("~/ficheiros/" + filename);
+            DownLoad(Filpath);
+        }
+
+        public void DownLoad(string FName)
+        {
+            string path = FName;
+            System.IO.FileInfo file = new System.IO.FileInfo(path);
+            if (file.Exists)
+            {
+                Response.Clear();
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name); Response.AddHeader("Content-Length", file.Length.ToString());
+                Response.ContentType = "application/octet-stream"; // download […]
             }
         }
     }

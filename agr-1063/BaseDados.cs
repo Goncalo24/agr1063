@@ -141,17 +141,18 @@ namespace agr_1063
         #endregion
 
         #region Avisos/noticias
-        public int adicionarAviso(int sec, string titulo, string descricao, DateTime data)
+        public int adicionarAviso(int sec, string titulo, string descricao, DateTime data, string nomefich)
         {
-            string sql = "INSERT INTO Avisos(Sec,Titulo,Corpo,Data) VALUES ";
-            sql += "(@sec,@titulo,@descricao,@data);SELECT CAST(scope_identity() as int)";
+            string sql = "INSERT INTO Avisos(Sec,Titulo,Corpo,Data,NomeFicheiro) VALUES ";
+            sql += "(@sec,@titulo,@descricao,@data,@nomefich);SELECT CAST(scope_identity() as int)";
             //parâmetros
             List<SqlParameter> parametros = new List<SqlParameter>()
             {
                 new SqlParameter() {ParameterName="@sec",SqlDbType=System.Data.SqlDbType.Int,Value= sec},
                 new SqlParameter() {ParameterName="@titulo",SqlDbType=System.Data.SqlDbType.VarChar,Value= titulo},
                 new SqlParameter() {ParameterName="@descricao",SqlDbType=System.Data.SqlDbType.VarChar,Value= descricao},
-                new SqlParameter() {ParameterName="@data",SqlDbType=System.Data.SqlDbType.Date,Value= data}
+                new SqlParameter() {ParameterName="@data",SqlDbType=System.Data.SqlDbType.Date,Value= data},
+                new SqlParameter() {ParameterName="@nomefich",SqlDbType=System.Data.SqlDbType.VarChar,Value= nomefich}
             };
             //executaComando(sql, parametros);
             SqlCommand comando = new SqlCommand(sql, ligacaoBD);
