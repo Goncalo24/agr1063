@@ -19,10 +19,10 @@ namespace agr_1063
                 }
                 else
                 {
-                    if (int.Parse(Request["sec"]) == 1)
+                    /*if (int.Parse(Request["sec"]) == 1)
                     {
                         Image1.ImageUrl = "~/img/S_Fran";
-                    }
+                    }*/
                 }
             }
         }

@@ -70,6 +70,7 @@
     <Content Include="Ativar_Desativar.aspx" />
     <Content Include="Faceis.aspx" />
     <Content Include="img\21942083_1966646150271569_343681478_n - Cópia.png" />
+    <Content Include="img\fundo.png" />
     <Content Include="Ver_Aviso.aspx" />
     <Content Include="Avisos.aspx" />
     <Content Include="css\bootstrap.css" />
@@ -79,7 +80,6 @@
     <Content Include="img\13119097_1544182592552675_5863353489571651733_n.jpg" />
     <Content Include="img\14232419_1249025668476049_4179209235872819757_n.jpg" />
     <Content Include="img\3.jpg" />
-    <Content Include="img\bg.jpg" />
     <Content Include="img\Left.ico" />
     <Content Include="img\osu.png" />
     <Content Include="img\Right.ico" />

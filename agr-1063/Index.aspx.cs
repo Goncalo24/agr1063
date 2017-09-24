@@ -16,10 +16,6 @@ namespace agr_1063
         protected void Page_Load(object sender, EventArgs e)
         {
             CarregarNoticias();
-            
-            /*HtmlControl masterPageBody = (HtmlControl)Master.FindControl("Body");
-            masterPageBody.Style.Remove("background-image");
-            masterPageBody.Style.Add("background-image", "/img/" + sec + ".jpg");*/
         }
 
         protected void CarregarNoticias()
