@@ -6,6 +6,7 @@
     <div class="container" style="background-color: #C0C0C0; opacity: 0.9" aria-busy="False">
         <h1>FACEIS</h1>
         <br />
+        <asp:Image ID="Image1" runat="server" />
         <div class="panel-group" id="accordion">
             <%
                 //lobitos

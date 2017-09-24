@@ -29,18 +29,15 @@ namespace agr_1063
                     else
                         Response.Redirect("Login.aspx");
                 }
+
                 id = int.Parse(Request["id"].ToString());
                 CarregarNoticias();
             }
-
-            /*HtmlControl masterPageBody = (HtmlControl)Master.FindControl("Body");
-            masterPageBody.Style.Remove("background-image");
-            masterPageBody.Style.Add("background-image", "/img/" + sec + ".jpg");*/
         }
 
         protected void CarregarNoticias()
         {
-            DataTable dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE idAviso = " + id + " ORDER BY idAviso DESC");
+            DataTable dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE idAviso = " + id);
 
             if (dados == null) return;
 
@@ -56,7 +53,6 @@ namespace agr_1063
                 Label1.Text = dados.Rows[0][2].ToString();
                 paragraph.InnerText = dados.Rows[0][3].ToString(); 
                 Label5.Text = dados.Rows[0][4].ToString();
-                filename = dados.Rows[0][5].ToString();
             }
             catch (Exception)
             {
@@ -66,6 +62,18 @@ namespace agr_1063
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
+            id = int.Parse(Request["id"].ToString());
+            DataTable dados = bd.DevolveConsulta("SELECT NomeFicheiro FROM Avisos WHERE idAviso = " + id);
+            if (dados == null) return;
+            try
+            {
+                filename = dados.Rows[0][0].ToString();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
             string Filpath = Server.MapPath("~/ficheiros/" + filename);
             DownLoad(Filpath);
         }

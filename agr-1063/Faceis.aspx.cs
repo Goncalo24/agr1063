@@ -17,6 +17,13 @@ namespace agr_1063
                 {
                     Response.Redirect("Login.aspx");
                 }
+                else
+                {
+                    if (int.Parse(Request["sec"]) == 1)
+                    {
+                        Image1.ImageUrl = "~/img/S_Fran";
+                    }
+                }
             }
         }
     }
