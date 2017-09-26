@@ -13,7 +13,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body id="Body" runat="server">
+<body id="Body" runat="server" style="background-image:url(../img/fundo.png)">
     <!--<div class="brand">Comunidade 28</div>
     <div class="aomddress-bar">Agrupamento 1063 | Fragosela </div>-->
     <form id="form1" runat="server">
@@ -91,7 +91,7 @@
 
             <br />
             <div id="footer" class="panel-footer">
-                Hu3Hu3u3Hu3Hu3
+                REgulamento Interno
             </div>
         </div>
     </form>
