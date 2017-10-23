@@ -28,7 +28,7 @@
                     <td style="padding: 5px">
                         Imagem:
                     </td>
-                    <td style="padding: 5px">
+                    <td style="padding: 5px"> 
                         <asp:FileUpload ID="FUim" runat="server" />
                     </td>
                 </tr>
