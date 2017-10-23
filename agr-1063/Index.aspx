@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="agr_1063.Index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicadores -->
         <ol class="carousel-indicators">
@@ -33,7 +32,10 @@
     </div>
     <br />
 
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container text-center" style="background-color: #C0C0C0; opacity: 1">
+
         <h1 style="text-align: center;">Bem Vindo!</h1>
         <br />
         <!-- Div para os avisos/noticias -->
@@ -44,6 +46,5 @@
         </div>
         <br />
     </div>
-
 
 </asp:Content>
