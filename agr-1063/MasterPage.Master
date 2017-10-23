@@ -15,7 +15,7 @@
 </head>
 <body id="Body" runat="server">
     <!--<div class="brand">Comunidade 28</div>
-    <div class="aomddress-bar">Agrupamento 1063 | Fragosela </div>-->
+    <div class="aomddress-bar">Agrupamento 1063 | Fragosela </div>--> 
     <form id="form1" runat="server">
         <div>
             <!--Menu-->
