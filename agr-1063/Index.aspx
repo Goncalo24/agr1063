@@ -39,11 +39,12 @@
         <h1 style="text-align: center;">Bem Vindo!</h1>
         <br />
         <!-- Div para os avisos/noticias -->
-        <div class="container" style="border-color: #ffffff; background-color: #000000; width: auto; opacity: 1">
+         <%:CarregarNoticias() %>  
+        <!--<div class="container" style="border-color: #ffffff; background-color: #000000; width: auto; opacity: 1">
             <br />
-            <asp:GridView ID="GridView1" runat="server" CssClass="table" AllowPaging="True" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging">
+           <!-- <asp:GridView ID="GridView1" runat="server" CssClass="table" AllowPaging="True" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging">
             </asp:GridView>
-        </div>
+        </div>-->
         <br />
     </div>
 

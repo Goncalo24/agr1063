@@ -15,19 +15,52 @@ namespace agr_1063
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarregarNoticias();
+            //CarregarNoticias();
         }
 
-        protected void CarregarNoticias()
+        public HtmlString CarregarNoticias()
         {
             DataTable dados;
+            string conteudo = "";
+            HtmlString retorno = null;
 
             if (Session["sec"] != null)
                 dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE Sec= " + Session["sec"] + " ORDER BY idAviso DESC");
             else
                 dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE Sec=6 ORDER BY idAviso DESC");
 
-            //limpar grelha
+            if (dados == null)
+            {
+                conteudo = "<div class='container' style='border - color: #ffffff; background-color: #000000; width: auto; opacity: 1'>";
+                conteudo += "<h2>Não tem nenhum informação disponivel</h2> </ div>";
+                retorno = new HtmlString(conteudo);
+                return retorno;
+            }
+            else
+            {
+                int i = 0;
+                foreach (DataRow linha in dados.Rows)
+                {
+                    linha[1] = Server.HtmlDecode(linha[1].ToString());
+                    linha[2] = Server.HtmlDecode(linha[2].ToString());
+
+                    conteudo += "<div class='container' style='border - color: #ffffff; background-color: #000000; width: auto; opacity: 1'>";
+                    conteudo += "<table class='not'> <tr> <td colspan='2'> <h3>" + dados.Rows[i][2].ToString() + "</h3> </td> </tr>";
+                    conteudo += "<tr> <td> <img src='Imagens/news/" + dados.Rows[i][0] + ".jpg'> </td> <td> <p>" + dados.Rows[i][3] + "</p> </td> </tr> </table>  </div>";
+                    i++;
+                }
+                retorno = new HtmlString(conteudo);
+                return retorno;
+            }
+
+            //return retorno;
+
+            /*foreach (DataRow linha in dados.Rows)
+            {
+                
+            }*/
+
+            /*//limpar grelha
             GridView1.Columns.Clear();
             GridView1.ShowHeader = false;
 
@@ -80,7 +113,7 @@ namespace agr_1063
             GridView1.Columns.Add(lnkver);
 
             //refresh da gridview
-            GridView1.DataBind();
+            GridView1.DataBind();*/
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)

@@ -90,9 +90,12 @@
             </asp:ContentPlaceHolder>
 
             <br />
-            <div id="footer" class="panel-footer">
+            <footer class="panel-footer">
                 REgulamento Interno
-            </div>
+            </footer>
+           <!-- <div id="footer" class="panel-footer">
+                
+            </div>-->
         </div>
     </form>
 </body>

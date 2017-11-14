@@ -78,7 +78,7 @@ namespace agr_1063
                 }
                 else
                 {
-                    file = null;
+                    file = " ";
                     //Adiciona na Base de Dados
                     id = bd.adicionarAviso(sec, titulo, desc, data, file);
                 }
