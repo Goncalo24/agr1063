@@ -217,6 +217,7 @@ legend
 }
 .not{ 
     color: white;
+    background-color: green;
     margin-left: 10px;
     margin-top: 10%;
     padding-top: 15%;
