@@ -41,12 +41,12 @@ namespace agr_1063
                 int i = 0;
                 foreach (DataRow linha in dados.Rows)
                 {
-                    linha[1] = Server.HtmlDecode(linha[1].ToString());
                     linha[2] = Server.HtmlDecode(linha[2].ToString());
+                    linha[3] = Server.HtmlDecode(linha[3].ToString());
 
-                    conteudo += "<div class='container' style='border - color: #ffffff; background-color: #000000; width: auto; opacity: 1'>";
-                    conteudo += "<table class='not'> <tr> <td colspan='2'> <h3>" + dados.Rows[i][2].ToString() + "</h3> </td> </tr>";
-                    conteudo += "<tr> <td> <img src='Imagens/news/" + dados.Rows[i][0] + ".jpg'> </td> <td> <p>" + dados.Rows[i][3] + "</p> </td> </tr> </table>  </div>";
+                    conteudo += "<div class='not'>";
+                    conteudo += "<table class='not tab'> <tr> <td colspan='2'> <h3>" + dados.Rows[i][2].ToString() + "</h3> </td> </tr>";
+                    conteudo += "<tr> <td class='not img'> <img src='Imagens/news/" + dados.Rows[i][0] + ".jpg'> </td> <td> <p>" + dados.Rows[i][3] + "</p> </td> </tr> </table>  </div> <hr>";
                     i++;
                 }
                 retorno = new HtmlString(conteudo);

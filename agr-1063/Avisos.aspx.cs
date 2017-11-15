@@ -56,7 +56,7 @@ namespace agr_1063
             {
                 int sec = ddlsec.SelectedIndex;
                 string titulo = Server.HtmlEncode(tbTit.Text);
-                string desc = Server.HtmlEncode(taDes.Text);
+                string desc = Server.HtmlEncode(taDes.Text); 
                 DateTime data = DateTime.Now;
 
                 //guardar o Ficheiro
