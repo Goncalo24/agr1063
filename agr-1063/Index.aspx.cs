@@ -43,10 +43,18 @@ namespace agr_1063
                 {
                     linha[2] = Server.HtmlDecode(linha[2].ToString());
                     linha[3] = Server.HtmlDecode(linha[3].ToString());
+                    linha[5] = Server.HtmlDecode(linha[5].ToString());
 
                     conteudo += "<div class='not'>";
-                    conteudo += "<table class='not tab'> <tr> <td colspan='2'> <h3>" + dados.Rows[i][2].ToString() + "</h3> </td> </tr>";
-                    conteudo += "<tr> <td class='not img'> <img src='Imagens/news/" + dados.Rows[i][0] + ".jpg'> </td> <td> <p>" + dados.Rows[i][3] + "</p> </td> </tr> </table>  </div> <hr>";
+                    conteudo += "<div class='not img'> <img src='Imagens/news/" + dados.Rows[i][0] + ".jpg'></div>";
+                    conteudo += "<div class='not txt'> <h3 class='not txt H'>" + dados.Rows[i][2].ToString() + "</h3> <p class='not txt Pa'>" + dados.Rows[i][3] + "</p></div>";
+                    if (linha[5].ToString() != " " || linha[5].ToString() != null)
+                    {
+                        conteudo += "<div><a href='Transferir.aspx?" + Server.UrlEncode("name=" + dados.Rows[i][5]) + "'>Transferir Ficheiro</a</div>";
+                    }
+                    conteudo += "</div> <hr>";
+                    //conteudo += "<table class='not tab'> <tr> <td colspan='2'>  </td> </tr>";
+                    //conteudo += "<tr> <td class='not img'>  </td> <td> <p>" + dados.Rows[i][3] + "</p> </td> </tr> </table>  </div> <hr>";
                     i++;
                 }
                 retorno = new HtmlString(conteudo);

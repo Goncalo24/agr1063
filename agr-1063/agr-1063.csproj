@@ -71,6 +71,7 @@
     <Content Include="Faceis.aspx" />
     <Content Include="img\21942083_1966646150271569_343681478_n - Cópia.png" />
     <Content Include="img\fundo.png" />
+    <Content Include="Transferir.aspx" />
     <Content Include="Ver_Aviso.aspx" />
     <Content Include="Avisos.aspx" />
     <Content Include="css\bootstrap.css" />
@@ -131,6 +132,13 @@
     </Compile>
     <Compile Include="Faceis.aspx.designer.cs">
       <DependentUpon>Faceis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transferir.aspx.cs">
+      <DependentUpon>Transferir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Transferir.aspx.designer.cs">
+      <DependentUpon>Transferir.aspx</DependentUpon>
     </Compile>
     <Compile Include="Ver_Aviso.aspx.cs">
       <DependentUpon>Ver_Aviso.aspx</DependentUpon>

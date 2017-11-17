@@ -215,22 +215,33 @@ legend
     font-weight: lighter;
     font-size: 26px;
 }
-.not{ 
-    color: white;
+
+.not {
     background-color: green;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-.not .tab{
-    border-spacing: 5px;
-    border-collapse: separate;
+    width: 100%;
+    overflow: auto;
 }
 .not .img{
-    padding-right: 5%;
+    padding: 2%;
+    margin: 0;
+    width: 18%;
+    float: left;
+    overflow: hidden;
+    min-width: 160px;
 }
 .not .txt{
-    padding-left: 5%;
-    margin: 10%;
-    width: 70%;
+    margin: 0;
+    float: left;
+    padding: 2%;
+    width: 78%;
     text-align: left;
+    word-wrap: break-word;
+}
+.not .txt .H{
+    word-wrap: break-word;
+    color: white;
+}
+.not .txt .Pa{
+    word-wrap: break-word;
+    color: white;
 }
