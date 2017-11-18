@@ -40,7 +40,7 @@
                     <td style="padding: 5px">Nome:
                     </td>
                     <td style="padding: 5px">
-                        <asp:textbox id="tbNome" runat="server"></asp:textbox>
+                        <asp:textbox id="tbNome" runat="server" placeholder="Nome completo"></asp:textbox>
                     </td>
                 </tr>
                 <tr>

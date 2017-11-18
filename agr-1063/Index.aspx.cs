@@ -53,81 +53,11 @@ namespace agr_1063
                         conteudo += "<div class='fich'><a href='Transferir.aspx?name=" + Server.UrlEncode(dados.Rows[i][5].ToString()) + "'>Transferir Ficheiro</a></div>";
                     }
                     conteudo += "<div class='data'><h5>" + dados.Rows[i][4].ToString() + "</h5></div></div> <hr>";
-                    //conteudo += "<table class='not tab'> <tr> <td colspan='2'>  </td> </tr>";
-                    //conteudo += "<tr> <td class='not img'>  </td> <td> <p>" + dados.Rows[i][3] + "</p> </td> </tr> </table>  </div> <hr>";
                     i++;
                 }
                 retorno = new HtmlString(conteudo);
                 return retorno;
             }
-
-            //return retorno;
-
-            /*foreach (DataRow linha in dados.Rows)
-            {
-                
-            }*/
-
-            /*//limpar grelha
-            GridView1.Columns.Clear();
-            GridView1.ShowHeader = false;
-
-            if (dados == null) return;
-
-            foreach (DataRow linha in dados.Rows)
-            {
-                linha[1] = Server.HtmlDecode(linha[1].ToString());
-            }
-
-            //adicionar coluna ver
-            DataColumn cVer = new DataColumn();
-            cVer.ColumnName = "ver";
-            cVer.DataType = Type.GetType("System.String");
-            dados.Columns.Add(cVer);
-
-            //associar datatable
-            GridView1.DataSource = dados;
-            GridView1.AutoGenerateColumns = false;
-
-            //definir colunas
-            //id
-            BoundField bfId = new BoundField();
-            bfId.DataField = "idAviso";
-            //bfId.HeaderText = "ID";
-            bfId.Visible = false;
-            GridView1.Columns.Add(bfId);
-
-            //imagem
-            ImageField imagem = new ImageField();
-            imagem.DataImageUrlFormatString = "~/Imagens/news/{0}.jpg";
-            imagem.DataImageUrlField = "idAviso";
-            //imagem.HeaderText = "Imagem";
-            imagem.ControlStyle.Width = 100;
-            GridView1.Columns.Add(imagem);
-
-            //nome
-            BoundField bfNome = new BoundField();
-            bfNome.DataField = "Titulo";
-            //bfNome.HeaderText = "Nome";
-            GridView1.Columns.Add(bfNome);
-
-            //ver
-            HyperLinkField lnkver = new HyperLinkField();
-            // lnkcomprar.HeaderText = "Ver";
-            lnkver.DataTextField = "ver";
-            lnkver.Text = "Ver";
-            lnkver.DataNavigateUrlFormatString = "Ver_Aviso.aspx?id={0}&sec={0}";
-            lnkver.DataNavigateUrlFields = new string[] { "idAviso", "Sec" };
-            GridView1.Columns.Add(lnkver);
-
-            //refresh da gridview
-            GridView1.DataBind();*/
-        }
-
-        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            GridView1.PageIndex = e.NewPageIndex;
-            CarregarNoticias();
         }
     }
 }

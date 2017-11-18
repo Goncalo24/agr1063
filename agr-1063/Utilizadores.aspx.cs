@@ -368,6 +368,11 @@ namespace agr_1063
                 string user = lst.ToLower() + '.' + frst.ToLower();
                 //Adicionar na base de dados
                 bd.AdicionaEscuteiro(nome, user, pass, nasc, sec);
+
+                Response.Write("<script>alert('Utilizador inserido com sucesso')</script>");
+                tbNome.Text = string.Empty;
+                tbdata.Text = string.Empty;
+                ddlsec.SelectedIndex = -1;
             }
             catch (Exception erro)
             {

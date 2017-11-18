@@ -204,12 +204,16 @@ div.centre
 }
 .registrationform
 {
-    padding: 30px;
+    margin: 0;
+    padding-left: 9%;
+    padding-right: 9%;
+    width: 80%;
     background-color: #C0C0C0;
     color: #C0C0C0 !important;
 }
 legend
 {
+    margin: 0;
     text-align: left;
     color: #FFFFFF;
     font-weight: lighter;

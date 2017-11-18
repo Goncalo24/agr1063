@@ -40,12 +40,6 @@
         <br />
         <!-- Div para os avisos/noticias -->
          <%:CarregarNoticias() %>  
-        <!--<div class="container" style="border-color: #ffffff; background-color: #000000; width: auto; opacity: 1">
-            <br />
-           <!-- <asp:GridView ID="GridView1" runat="server" CssClass="table" AllowPaging="True" PageSize="5" OnPageIndexChanging="GridView1_PageIndexChanging">
-            </asp:GridView>
-        </div>-->
         <br />
     </div>
-
 </asp:Content>
