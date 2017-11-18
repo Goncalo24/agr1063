@@ -48,7 +48,7 @@ namespace agr_1063
                     conteudo += "<div class='not'>";
                     conteudo += "<div class='not img'> <img src='Imagens/news/" + dados.Rows[i][0] + ".jpg'></div>";
                     conteudo += "<div class='not txt'> <h3 class='not txt H'>" + dados.Rows[i][2].ToString() + "</h3> <p class='not txt Pa'>" + dados.Rows[i][3] + "</p></div>";
-                    if (linha[5].ToString() != " " || linha[5].ToString() != null)
+                    if (linha[5].ToString() != " " && linha[5].ToString() != null)
                     {
                         conteudo += "<div><a href='Transferir.aspx?" + Server.UrlEncode("name=" + dados.Rows[i][5]) + "'>Transferir Ficheiro</a</div>";
                     }
