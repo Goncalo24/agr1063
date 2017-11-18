@@ -210,10 +210,9 @@ div.centre
     background-color: #C0C0C0;
     color: #C0C0C0;
 }
-.legend
+legend
 {
     padding-top: 5%;
-    padding-bottom: 5%;
     margin: 0;
     text-align: left;
     color: #FFFFFF;
@@ -266,8 +265,4 @@ div.centre
     width: 78%;
     text-align: center;
     word-wrap: break-word;
-}
-
-.login{
-    padding-top: 5%;
 }
