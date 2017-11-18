@@ -202,17 +202,18 @@ div.centre
   margin-left: auto;
   margin-right: auto;
 }
-.registrationform
+.log-reg
 {
     margin: 0;
-    padding-left: 9%;
-    padding-right: 9%;
-    width: 80%;
+    padding-left: 30%;
+    padding-right: 30%;
     background-color: #C0C0C0;
-    color: #C0C0C0 !important;
+    color: #C0C0C0;
 }
-legend
+.legend
 {
+    padding-top: 5%;
+    padding-bottom: 5%;
     margin: 0;
     text-align: left;
     color: #FFFFFF;
@@ -265,4 +266,8 @@ legend
     width: 78%;
     text-align: center;
     word-wrap: break-word;
+}
+
+.login{
+    padding-top: 5%;
 }

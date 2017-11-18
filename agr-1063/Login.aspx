@@ -4,12 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container" style="background-color: #C0C0C0;">
-        <div class="registrationform">
-            <legend>Login </legend>
-
+        <div class="log-reg" >
+            <legend class="legend">Login </legend>
             <asp:TextBox align="center" ID="txtemail" runat="server" placeholder="User/Email" CssClass="form-control"></asp:TextBox>
             <br />
-            <asp:TextBox align="center" ID="txtpass" runat="server" placeholder="Password" TextMode="Password" CssClass="form-control">></asp:TextBox>
+            <asp:TextBox  align="center" ID="txtpass" runat="server" placeholder="Password" TextMode="Password" CssClass="form-control">></asp:TextBox>
             <br />
             <asp:Label ForeColor="Black" ID="lblerro" runat="server" Text=""></asp:Label>
             <br />
