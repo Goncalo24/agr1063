@@ -50,9 +50,9 @@ namespace agr_1063
                     conteudo += "<div class='not txt'> <h3 class='not txt H'>" + dados.Rows[i][2].ToString() + "</h3> <p class='not txt Pa'>" + dados.Rows[i][3] + "</p></div>";
                     if (linha[5].ToString() != " " && linha[5].ToString() != null)
                     {
-                        conteudo += "<div><a href='Transferir.aspx?" + Server.UrlEncode("name=" + dados.Rows[i][5]) + "'>Transferir Ficheiro</a</div>";
+                        conteudo += "<div class='fich'><a href='Transferir.aspx?name=" + Server.UrlEncode(dados.Rows[i][5].ToString()) + "'>Transferir Ficheiro</a></div>";
                     }
-                    conteudo += "</div> <hr>";
+                    conteudo += "<div class='data'><h5>" + dados.Rows[i][4].ToString() + "</h5></div></div> <hr>";
                     //conteudo += "<table class='not tab'> <tr> <td colspan='2'>  </td> </tr>";
                     //conteudo += "<tr> <td class='not img'>  </td> <td> <p>" + dados.Rows[i][3] + "</p> </td> </tr> </table>  </div> <hr>";
                     i++;

@@ -223,8 +223,9 @@ legend
 }
 .not .img{
     padding: 2%;
+    padding-bottom: 1%;
     margin: 0;
-    width: 18%;
+    width: 25%;
     float: left;
     overflow: hidden;
     min-width: 160px;
@@ -233,7 +234,7 @@ legend
     margin: 0;
     float: left;
     padding: 2%;
-    width: 78%;
+    width: 70%;
     text-align: left;
     word-wrap: break-word;
 }
@@ -244,4 +245,20 @@ legend
 .not .txt .Pa{
     word-wrap: break-word;
     color: white;
+}
+.fich{
+    padding: 2%;
+    margin: 0;
+    width: 18%;
+    float: left;
+    min-width: 160px;
+}
+.data{
+    margin: 0;
+    float: left;
+    padding: 2%;
+    padding-top: 1%;
+    width: 78%;
+    text-align: center;
+    word-wrap: break-word;
 }

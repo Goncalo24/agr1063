@@ -21,16 +21,16 @@ namespace agr_1063
                 {
                     try
                     {
-                        string nome = Request[Server.UrlDecode("name")].ToString();
+                        string nome = Request["name"].ToString();
 
                         string Filpath = Server.MapPath("~/ficheiros/" + nome);
                         System.IO.FileInfo file = new System.IO.FileInfo(Filpath);
                         if (file.Exists)
                         {
                             Response.Clear();
-                            Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name); Response.AddHeader("Content-Length", file.Length.ToString());
+                            Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name);
+                            Response.AddHeader("Content-Length", file.Length.ToString());
                             Response.ContentType = "application/octet-stream"; // download […]
-                            Response.Redirect("Index.aspx");
                         }
                     }
                     catch(Exception)
