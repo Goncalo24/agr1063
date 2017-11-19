@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="agr_1063.Index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div style="margin:0;">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicadores -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -14,26 +16,24 @@
         <!-- Capa 4 slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <!--<img src="img/13119097_1544182592552675_5863353489571651733_n.jpg" />-->
+                <img src="img/carousel/DSC_0487.jpg" />
             </div>
 
             <div class="item">
-                <!-- <img src="img/14232419_1249025668476049_4179209235872819757_n.jpg" />-->
+                <img src="img/carousel/DSC_0488.jpg" />
             </div>
 
             <div class="item">
-                <!--<img src="img/osu.png" />-->
+                <img src="img/carousel/DSC_0489.jpg" />
             </div>
 
             <div class="item">
-                <!--<img src="img/transferir.jpg" />-->
+                <img src="img/carousel/DSC_0490.jpg" />
             </div>
         </div>
-    </div>
+        </div>
+    </div>   
     <br />
-
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container text-center" style="background-color: #C0C0C0; opacity: 1">
 
         <h1 style="text-align: center;">Bem Vindo!</h1>
