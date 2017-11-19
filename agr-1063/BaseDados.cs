@@ -121,10 +121,10 @@ namespace agr_1063
             ExecutaComando(sql, parametros);
         }
 
-        public void AtualizarUtilizador(int Id, string nome, string user, string pass, string email, int tel)
+        public void AtualizarUtilizador(int Id, string nome, string user, string pass, string email, int tel, bool passconf)
         {
             string sql = "UPDATE Utilizadores SET Nome= @nome, UserLog= @user, Pass= cast(HASHBYTES('SHA1',@pass) as varchar), ";
-            sql += "Email= @email, Telemovel= @tel WHERE IdUser = @Id;";
+            sql += "Email= @email, Telemovel= @tel, PassConf= @passconf  WHERE IdUser = @Id;";
 
             //parametros
             List<SqlParameter> parametros = new List<SqlParameter>()
@@ -135,6 +135,7 @@ namespace agr_1063
                 new SqlParameter() {ParameterName = "@pass", SqlDbType = System.Data.SqlDbType.VarChar, Value = pass},
                 new SqlParameter() {ParameterName = "@email", SqlDbType = System.Data.SqlDbType.VarChar, Value = email},
                 new SqlParameter() {ParameterName = "@tel", SqlDbType = System.Data.SqlDbType.Int, Value = tel},
+                new SqlParameter() {ParameterName = "@passconf", SqlDbType = System.Data.SqlDbType.Bit, Value = passconf}
             };
             ExecutaComando(sql, parametros);
         }

@@ -34,7 +34,15 @@ namespace agr_1063
                 Session["nome"] = utilizador.Rows[0][1].ToString();
                 Session["sec"] = utilizador.Rows[0][7].ToString();
                 Session["tipo"] = utilizador.Rows[0][8].ToString();
-                Response.Redirect("Index.aspx");
+                bool passconf = bool.Parse(utilizador.Rows[0][11].ToString());
+                if (passconf == false)
+                {
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Altere a sua password'); window.location.href = 'Perfil.aspx'", true);
+                }
+                else
+                {
+                    Response.Redirect("Index.aspx");
+                }
             }
             catch (Exception erro)
             {

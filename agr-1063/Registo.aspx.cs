@@ -40,6 +40,7 @@ namespace agr_1063
                 bd.ExecutaComando(sql, parametros);
 
                 Response.Write("<script>alert('Aguarde pela aprovação do seu registo');</script>");
+                Response.Redirect("login.aspx");
             }
             catch (Exception erro)
             {

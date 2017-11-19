@@ -6,7 +6,7 @@
     <div class="container" style="background-color: #C0C0C0;">
         <div class="log-reg" >
             <legend>Login</legend>
-            <asp:TextBox Style="padding-top: 5%" align="center" ID="txtemail" runat="server" placeholder="User/Email" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox Style="margin-top:5%" align="center" ID="txtemail" runat="server" placeholder="User/Email" CssClass="form-control"></asp:TextBox>
             <br />
             <asp:TextBox  align="center" ID="txtpass" runat="server" placeholder="Password" TextMode="Password" CssClass="form-control">></asp:TextBox>
             <br />
@@ -15,7 +15,7 @@
             <br />
             <asp:Button ID="btnlogin" runat="server" Text="Login" class="form-control" OnClick="btnlogin_Click" />
             <br />
-            <asp:HyperLink NavigateUrl="Registo.aspx" runat="server">Registar</asp:HyperLink>
+            <asp:HyperLink Style="padding-left:45%" NavigateUrl="Registo.aspx" runat="server">Registar</asp:HyperLink>
         </div>
         <br />
     </div>

@@ -148,35 +148,46 @@ namespace agr_1063
                 string pass = Server.HtmlEncode(tbPass.Text);
                 string email = Server.HtmlEncode(tbEmail.Text);
                 int tel = 0;
+                bool passconf;
                 if (tbTel.Text != "")
                 {
                     tel = int.Parse(tbTel.Text);
                 }
+                if (pass != "")
+                {
+                    passconf = true;
 
-                bd.AtualizarUtilizador(userid, nome, user, pass, email, tel);
+                    bd.AtualizarUtilizador(userid, nome, user, pass, email, tel, passconf);
 
-                //Nome
-                tbNome.Visible = false;
-                lblNome.Visible = true;
-                //User
-                lblUser.Visible = true;
-                tbUser.Visible = false;
-                //Email
-                lblEmail.Visible = true;
-                tbEmail.Visible = false;
-                //Telemóvel
-                lblTel.Visible = true;
-                tbTel.Visible = false;
-                //Pass
-                lblPass.Visible = false;
-                tbPass.Visible = false;
-                //Butões
-                btnGuardar.Visible = false;
-                btnEdit.Visible = true;
+                    //Nome
+                    tbNome.Visible = false;
+                    lblNome.Visible = true;
+                    //User
+                    lblUser.Visible = true;
+                    tbUser.Visible = false;
+                    //Email
+                    lblEmail.Visible = true;
+                    tbEmail.Visible = false;
+                    //Telemóvel
+                    lblTel.Visible = true;
+                    tbTel.Visible = false;
+                    //Pass
+                    lblPass.Visible = false;
+                    tbPass.Visible = false;
+                    //Butões
+                    btnGuardar.Visible = false;
+                    btnEdit.Visible = true;
 
-                CarregaDados();
+                    lblErro.Text = "";
+
+                    CarregaDados();
+                }
+                else
+                {
+                    lblErro.Text = "O campo Palavra Passe não pode ser vazio";
+                }
             }
-            catch (Exception)
+            catch (Exception Erro)
             {
                 lblErro.Text = "Não foi possível atualizar os seus dados";
             }
