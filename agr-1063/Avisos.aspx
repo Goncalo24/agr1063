@@ -21,7 +21,6 @@
                     </td>
                     <td style="padding: 5px">
                         <asp:TextBox Style="width: 100%" ID="taDes" runat="server" TextMode="MultiLine" cols="20" Rows="5"></asp:TextBox>
-                        <!--<asp:textarea Style="width: 100%" id="taDes" cols="20" rows="5"></aspx:textarea>-->
                     </td>
                 </tr>
                 <tr>
