@@ -26,13 +26,19 @@ namespace agr_1063
 
             if (Session["sec"] != null)
                 dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE Sec= " + Session["sec"] + " ORDER BY idAviso DESC");
+            /*else if (Session["sec"].ToString() == "5")
+            {
+                DataTable idf = bd.DevolveConsulta("SELECT IdFilho FROM Parentesco WHERE IdPai= " + Session["id"]);
+                DataTable secf = bd.DevolveConsulta("SELECT Seccao FROM Utilizadores WHERE IdUser=" + idf.ToString());
+                dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE Sec=" + Session["sec"] + " AND Sec=" + secf.ToString());
+            }*/
             else
                 dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE Sec=6 ORDER BY idAviso DESC");
 
             if (dados == null)
             {
                 conteudo = "<div class='container' style='border - color: #ffffff; background-color: #000000; width: auto; opacity: 1'>";
-                conteudo += "<h2>Não tem nenhum informação disponivel</h2> </ div>";
+                conteudo += "<h2>Não tem nenhuma informação disponivel</h2> </ div>";
                 retorno = new HtmlString(conteudo);
                 return retorno;
             }

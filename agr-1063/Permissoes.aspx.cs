@@ -26,7 +26,7 @@ namespace agr_1063
         }
         public void CarregarDados()
         {
-            DataTable dados = bd.DevolveConsulta("SELECT * FROM Utilizadores WHERE IdUser= " + id);
+            DataTable dados = bd.DevolveConsulta("SELECT * FROM Utilizadores WHERE IdUser!=" +id+ " AND Confirmado= 1");
 
             if (dados == null) return;
 
@@ -34,18 +34,20 @@ namespace agr_1063
             {
                 linha[1] = Server.HtmlDecode(linha[1].ToString());
                 linha[2] = Server.HtmlDecode(linha[2].ToString());
-            }
+                if (int.Parse(linha[0].ToString()) == id)
+                {
+                    lblNome.Text = linha[1].ToString();
 
-            lblNome.Text = dados.Rows[0][1].ToString();
-            int select = int.Parse(dados.Rows[0][8].ToString());
-
-            if (select == 0)
-            {
-                cb1.Checked = true;
-            }
-            else if (select == 1)
-            {
-                cb2.Checked = true;
+                    if (int.Parse(linha[8].ToString()) == 0)
+                    {
+                        cb1.Checked = true;
+                    }
+                    else if (int.Parse(linha[8].ToString()) == 1)
+                    {
+                        cb2.Checked = true;
+                    }
+                }
+                lstb1.Items.Add(linha[1].ToString());
             }
         }
 

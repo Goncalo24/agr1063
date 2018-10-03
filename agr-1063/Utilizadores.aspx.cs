@@ -50,7 +50,8 @@ namespace agr_1063
 
         private void atualizaGrelha()
         {
-            DataTable dados = bd.DevolveConsulta("SELECT * FROM Utilizadores WHERE IdUser<> " + id + " AND Ativo=1");
+            //DataTable dados = bd.DevolveConsulta("SELECT * FROM Utilizadores WHERE IdUser<> " + id + " AND Ativo=1");
+            DataTable dados = bd.DevolveConsulta("SELECT * FROM Utilizadores WHERE Ativo=1");
             //limpar grelha
             GridView1.Columns.Clear();
 
@@ -104,7 +105,7 @@ namespace agr_1063
             bfuser.HeaderText = "User";
             GridView1.Columns.Add(bfuser);
 
-            //user
+            //sec
             BoundField bfsec = new BoundField();
             bfsec.DataField = "Seccao";
             bfsec.HeaderText = "Secção";

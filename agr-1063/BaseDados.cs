@@ -121,6 +121,21 @@ namespace agr_1063
             ExecutaComando(sql, parametros);
         }
 
+        public void AdicionarPais(string nome, string pass, string email, int sec, int ativo)
+        {
+            string sql = "INSERT INTO Utilizadores(Nome, Pass, Email, Seccao, Ativo) VALUES (@nome, cast(HASHBYTES('SHA1',@pass) as varchar), @email, @sec, @ativo);";
+            //parâmetros
+            List<SqlParameter> parametros = new List<SqlParameter>()
+            {
+                new SqlParameter() {ParameterName="@nome",SqlDbType=System.Data.SqlDbType.VarChar,Value= nome},
+                new SqlParameter() {ParameterName="@pass",SqlDbType=System.Data.SqlDbType.VarChar,Value= pass},
+                new SqlParameter() {ParameterName="@email",SqlDbType=System.Data.SqlDbType.VarChar,Value= email},
+                new SqlParameter() {ParameterName="@sec",SqlDbType=System.Data.SqlDbType.Int,Value= sec},
+                new SqlParameter() {ParameterName="@ativo",SqlDbType=System.Data.SqlDbType.Int,Value= ativo}
+            };
+            ExecutaComando(sql, parametros);
+        }
+
         public void AtualizarUtilizador(int Id, string nome, string user, string pass, string email, int tel, bool passconf)
         {
             string sql = "UPDATE Utilizadores SET Nome= @nome, UserLog= @user, Pass= cast(HASHBYTES('SHA1',@pass) as varchar), ";

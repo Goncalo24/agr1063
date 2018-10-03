@@ -6,14 +6,14 @@
     <div style="margin:0;">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicadores -->
-        <ol class="carousel-indicators">
+       <!-- <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
             <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
 
-        <!-- Capa 4 slides -->
+        <!-- Capa 4 slides 
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <img src="img/carousel/DSC_0487.jpg" />
@@ -30,7 +30,7 @@
             <div class="item">
                 <img src="img/carousel/DSC_0490.jpg" />
             </div>
-        </div>
+        </div>-->
         </div>
     </div>   
     <br />

@@ -3,6 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container text-center" style="background-color: #C0C0C0; opacity: 0.9" aria-busy="False">
+        <div>
+            <h2>Atribuir Parentesco</h2>
+            <asp:ListBox ID="lstb1" runat="server"></asp:ListBox>
+        </div>
         <h2>Alterar Permissões</h2>
         <table align="center">
             <tbody>

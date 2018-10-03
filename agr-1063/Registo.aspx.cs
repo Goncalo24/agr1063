@@ -27,20 +27,15 @@ namespace agr_1063
                 int sec = 5;
                 int ativo = 0;
 
-                string sql = "INSERT INTO Utilizadores(Nome, Pass, Email, Seccao, Ativo) VALUES (@nome, cast(HASHBYTES('SHA1',@pass) as varchar), @email, @sec, @ativo);";
-                //parâmetros
-                List<SqlParameter> parametros = new List<SqlParameter>()
+                if (nome == "Maria Arminda Nunes Costa Lopes")
                 {
-                    new SqlParameter() {ParameterName="@nome",SqlDbType=System.Data.SqlDbType.VarChar,Value= nome},
-                    new SqlParameter() {ParameterName="@pass",SqlDbType=System.Data.SqlDbType.VarChar,Value= pass},
-                    new SqlParameter() {ParameterName="@email",SqlDbType=System.Data.SqlDbType.VarChar,Value= email},
-                    new SqlParameter() {ParameterName="@sec",SqlDbType=System.Data.SqlDbType.Int,Value= sec},
-                    new SqlParameter() {ParameterName="@ativo",SqlDbType=System.Data.SqlDbType.Int,Value= ativo}
-                };
-                bd.ExecutaComando(sql, parametros);
-
-                Response.Write("<script>alert('Aguarde pela aprovação do seu registo');</script>");
-                Response.Redirect("login.aspx");
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('O seu registo encontra-se bloqueado'); window.location.href = 'Index.aspx'", true);
+                }
+                else
+                {
+                    bd.AdicionarPais(nome, pass, email, sec, ativo);
+                    ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Aguarde pela aprovação do seu registo'); window.location.href = 'Index.aspx'", true);
+                }
             }
             catch (Exception erro)
             {
