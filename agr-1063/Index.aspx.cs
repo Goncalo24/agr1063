@@ -52,8 +52,8 @@ namespace agr_1063
                     linha[5] = Server.HtmlDecode(linha[5].ToString());
 
                     conteudo += "<div class='not'>";
-                    conteudo += "<div class='note img'> <img src='Imagens/news/" + dados.Rows[i][0] + ".jpg'></div>";
-                    conteudo += "<div class='note txt'> <h3 class='not txt H'>" + dados.Rows[i][2].ToString() + "</h3> <p class='not txt Pa'>" + dados.Rows[i][3] + "</p></div>";
+                    conteudo += "<div class='not img'> <img src='Imagens/news/" + dados.Rows[i][0] + ".jpg'></div>";
+                    conteudo += "<div class='not txt'> <h3 class='not txt H'>" + dados.Rows[i][2].ToString() + "</h3> <p class='not txt Pa'>" + dados.Rows[i][3] + "</p></div>";
                     if (linha[5].ToString() != " " && linha[5].ToString() != null)
                     {
                         conteudo += "<div class='fich'><a href='Transferir.aspx?name=" + Server.UrlEncode(dados.Rows[i][5].ToString()) + "'>Transferir Ficheiro</a></div>";
