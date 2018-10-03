@@ -16,6 +16,22 @@ namespace agr_1063
                 if (Session["id"] == null)
                 {
                     Response.Redirect("Login.aspx");
+                    try
+                    {
+                        string Filpath = Server.MapPath("~/ficheiros/REGULAMENTO INTERNO FINAL1063_15-10-2016");
+                        System.IO.FileInfo file = new System.IO.FileInfo(Filpath);
+                        if (file.Exists)
+                        {
+                            Response.Clear();
+                            Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name);
+                            Response.AddHeader("Content-Length", file.Length.ToString());
+                            Response.ContentType = "application/octet-stream"; // download […]
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
                 }
                 else
                 {
