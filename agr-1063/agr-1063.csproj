@@ -101,6 +101,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="ficheiros\REGULAMENTO INTERNO FINAL1063_15-10-2016.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -218,7 +219,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ficheiros\" />
     <Folder Include="imagens\news\" />
     <Folder Include="imagens\perfil\" />
   </ItemGroup>

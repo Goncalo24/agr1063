@@ -91,7 +91,7 @@
 
             <br />
             <footer class="panel-footer">
-                REgulamento Interno
+                <a href="Transferir.aspx?name=<%Server.UrlEncode("REGULAMENTO INTERNO FINAL1063_15-10-2016");%>">Regulamento Interno</a>
             </footer>
            <!-- <div id="footer" class="panel-footer">
                 
