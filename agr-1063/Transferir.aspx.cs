@@ -17,7 +17,7 @@ namespace agr_1063
                 {
                     try
                     {
-                        string Filpath = Server.MapPath("~/ficheiros/REGULAMENTO INTERNO FINAL1063_15-10-2016");
+                        string Filpath = Server.MapPath("~/ficheiros/REGULAMENTO INTERNO FINAL1063_15-10-2016.pdf");
                         System.IO.FileInfo file = new System.IO.FileInfo(Filpath);
                         if (file.Exists)
                         {
@@ -31,7 +31,7 @@ namespace agr_1063
                     {
                         return;
                     }
-                    Response.Redirect("Login.aspx");
+                    //Response.Redirect("Login.aspx");
                 }
                 else
                 {
