@@ -34,7 +34,7 @@
         </div>
     </div>   
     <br />
-    <div class="container text-center" style="background-color: #C0C0C0; opacity: 1">
+    <div class="container text-center" style="background-color: #F8F8FF; opacity: 1">
 
         <h1 style="text-align: center;">Bem Vindo!</h1>
         <br />
