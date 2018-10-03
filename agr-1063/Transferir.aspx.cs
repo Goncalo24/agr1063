@@ -15,7 +15,6 @@ namespace agr_1063
             {
                 if (Session["id"] == null)
                 {
-                    Response.Redirect("Login.aspx");
                     try
                     {
                         string Filpath = Server.MapPath("~/ficheiros/REGULAMENTO INTERNO FINAL1063_15-10-2016");
@@ -32,6 +31,7 @@ namespace agr_1063
                     {
                         return;
                     }
+                    Response.Redirect("Login.aspx");
                 }
                 else
                 {
