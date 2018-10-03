@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container" style="background-color: #C0C0C0">
+    <div class="container" style="background-color: #F8F8FF">
         <div class="log-reg">
             <legend>Registe-se </legend>
             <asp:TextBox Style="margin-top:5%" align="center" ID="txtnome" runat="server" placeholder="Insira o seu nome" CssClass="form-control"></asp:TextBox>
