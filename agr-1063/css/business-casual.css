@@ -236,6 +236,7 @@ legend
     min-width: 160px;
 }
 .not .txt{
+    background-color: transparent;
     margin: 0;
     float: left;
     padding: 2%;
@@ -244,14 +245,17 @@ legend
     word-wrap: break-word;
 }
 .not .txt .H{
+    background-color: transparent;
     word-wrap: break-word;
     color: white;
 }
 .not .txt .Pa{
+    background-color: transparent;
     word-wrap: break-word;
     color: white;
 }
 .fich{
+    background-color: transparent;
     padding: 2%;
     margin: 0;
     width: 18%;
@@ -259,6 +263,7 @@ legend
     min-width: 160px;
 }
 .data{
+    background-color: transparent;
     margin: 0;
     float: left;
     padding: 2%;
