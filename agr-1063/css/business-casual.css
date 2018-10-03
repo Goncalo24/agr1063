@@ -221,7 +221,7 @@ legend
 }
 
 .not {
-    background-image: radial-gradient(yellow, white);
+    background-image: radial-gradient(white, yellow);
     width: 100%;
     overflow: auto;
 }
