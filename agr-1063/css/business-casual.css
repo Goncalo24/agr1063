@@ -225,7 +225,7 @@ legend
     width: 100%;
     overflow: auto;
 }
-.not .img{
+.note .img{
     background-color: transparent;
     padding: 2%;
     padding-bottom: 1%;
@@ -235,7 +235,7 @@ legend
     overflow: hidden;
     min-width: 160px;
 }
-.not .txt{
+.note .txt{
     background-color: transparent;
     margin: 0;
     float: left;
@@ -244,12 +244,12 @@ legend
     text-align: left;
     word-wrap: break-word;
 }
-.not .txt .H{
+.note .txt .H{
     background-color: transparent;
     word-wrap: break-word;
     color: white;
 }
-.not .txt .Pa{
+.note .txt .Pa{
     background-color: transparent;
     word-wrap: break-word;
     color: white;
