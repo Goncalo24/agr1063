@@ -7,7 +7,7 @@
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url('../img/fundo.png');
-    background-attachment: scroll; /*center*/ 
+    background-attachment: fixed; /*center*/ 
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;
