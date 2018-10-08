@@ -22,13 +22,13 @@ namespace agr_1063 {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// Body control.
+        /// body control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Body;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl body;
         
         /// <summary>
         /// form1 control.
