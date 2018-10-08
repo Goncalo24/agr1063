@@ -6,7 +6,10 @@
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('../img/fundo.png') no-repeat center center fixed;
+    background: url('../img/fundo.png');
+    background-attachment: fixed; /*center*/ 
+    background-repeat: no-repeat;
+    background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
