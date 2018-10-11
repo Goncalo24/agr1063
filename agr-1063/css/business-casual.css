@@ -226,7 +226,6 @@ legend
 .not {
     background-color: yellow;
     width: 80%;
-    float: left;
     overflow: auto;
 }
 .not .img{
@@ -280,8 +279,4 @@ legend
 .divcalendar{
     width: 20%;
     float: left;
-}
-
-.container{
-    overflow: auto;
 }
