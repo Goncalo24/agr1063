@@ -51,14 +51,14 @@ namespace agr_1063
                     linha[3] = Server.HtmlDecode(linha[3].ToString());
                     linha[5] = Server.HtmlDecode(linha[5].ToString());
 
-                    conteudo += "<div class='not' style='float: left; width: 80%'>";
+                    conteudo += "<div class='not'>";
                     conteudo += "<div class='not img'> <img src='Imagens/news/" + dados.Rows[i][0] + ".ico'></div>";
                     conteudo += "<div class='not txt'> <h3 class='not txt H'>" + dados.Rows[i][2].ToString() + "</h3> <p class='not txt Pa'>" + dados.Rows[i][3] + "</p></div>";
                     if (linha[5].ToString() != " " && linha[5].ToString() != null)
                     {
                         conteudo += "<div class='fich'><a href='Transferir.aspx?name=" + Server.UrlEncode(dados.Rows[i][5].ToString()) + "'>Transferir Ficheiro</a></div>";
                     }
-                    conteudo += "<div class='data'><h5>" + dados.Rows[i][4].ToString() + "</h5></div></div> <br /> <hr style='float: left'>";
+                    conteudo += "<div class='data'><h5>" + dados.Rows[i][4].ToString() + "</h5></div></div> <hr style='width:100%; float: left'>";
                     i++;
                 }
                 retorno = new HtmlString(conteudo);

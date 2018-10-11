@@ -42,8 +42,10 @@
             <br />
             <a href="https://www.facebook.com/people/Os-Amigo-de-Fragosela/100007588891054">Amigos de Fragosela</a>
         </div>
-        <!-- Div para os avisos/noticias -->
+        <div style="float: left; width: 80%">
+            <!-- Div para os avisos/noticias -->
          <%:CarregarNoticias() %>  
+        </div>
         <br />
     </div>
 </asp:Content>
