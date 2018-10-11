@@ -37,8 +37,8 @@
     <div class="container text-center" style="background-color: #F8F8FF; opacity: 1; overflow: auto">
         <h1 style="text-align: center;">Bem Vindo!</h1>
         <br />
-        <div>
-            <asp:Calendar ID="Calendar1" runat="server" class="divcalendar"></asp:Calendar>
+        <div class="divcalendar">
+            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
         </div>
         <!-- Div para os avisos/noticias -->
          <%:CarregarNoticias() %>  
