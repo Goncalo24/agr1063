@@ -39,6 +39,8 @@
         <br />
         <div class="divcalendar" style="width: 20%; float: left">
             <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+            <br />
+            <a href="https://www.facebook.com/people/Os-Amigo-de-Fragosela/100007588891054">Amigos de Fragosela</a>
         </div>
         <!-- Div para os avisos/noticias -->
          <%:CarregarNoticias() %>  
