@@ -225,7 +225,8 @@ legend
 
 .not {
     background-color: yellow;
-    width: 77%;
+    width: 80%;
+    float: left;
     overflow: auto;
 }
 .not .img{
