@@ -225,7 +225,7 @@ legend
 
 .not {
     background-color: yellow;
-    width: 100%;
+    width: 78%;
     overflow: auto;
 }
 .not .img{
@@ -274,4 +274,13 @@ legend
     width: 78%;
     text-align: center;
     word-wrap: break-word;
+}
+
+.divcalendar{
+    width: 20%;
+    float: left;
+}
+
+.container{
+    overflow: auto;
 }
