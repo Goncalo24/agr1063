@@ -58,7 +58,7 @@ namespace agr_1063
                     {
                         conteudo += "<div class='fich'><a href='Transferir.aspx?name=" + Server.UrlEncode(dados.Rows[i][5].ToString()) + "'>Transferir Ficheiro</a></div>";
                     }
-                    conteudo += "<div class='data'><h5>" + dados.Rows[i][4].ToString() + "</h5></div></div> <hr>  <hr />";
+                    conteudo += "<div class='data'><h5>" + dados.Rows[i][4].ToString() + "</h5></div></div> <hr style='align: center'>  <hr />";
                     i++;
                 }
                 retorno = new HtmlString(conteudo);
