@@ -224,7 +224,6 @@ legend
 }
 
 .not {
-    border: solid;
     border-radius: 3px;
     background-color: yellow;
     overflow: auto;
