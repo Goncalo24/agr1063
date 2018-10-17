@@ -224,12 +224,12 @@ legend
 }
 
 .not {
-    border-radius: 3px;
+    border-radius: 10px;
     background-color: yellow;
     overflow: auto;
-    margin-bottom: 2%;
+    margin: 2%;
     float: left; 
-    width: 50%;
+    width: 48%;
 }
 .not .img{
     background-color: transparent;
@@ -279,7 +279,3 @@ legend
     word-wrap: break-word;
 }
 
-.divcalendar{
-    width: 20%;
-    float: left;
-}
