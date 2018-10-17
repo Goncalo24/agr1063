@@ -10,10 +10,10 @@ body {
     background-attachment: fixed; /*center*/ 
     background-repeat: no-repeat;
     background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+    /*-webkit-background-size: cover;
+    -moz-background-size: cover;*/
     background-size: cover;
-    -o-background-size: cover;
+    /*-o-background-size: cover;*/
 }
 
 h1,
@@ -224,6 +224,7 @@ legend
 }
 
 .not {
+    border: solid;
     border-radius: 3px;
     background-color: yellow;
     overflow: auto;

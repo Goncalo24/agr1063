@@ -105,33 +105,20 @@ namespace agr_1063
         #endregion
 
         #region Utilizadores
-        public void AdicionaEscuteiro(string nome, string user, string pass, DateTime data, int sec)
+        public void AdicionaEscuteiro(string nome, string user, string pass, string email, int tel, int sec, int ativo)
         {
-            string sql = "INSERT INTO Utilizadores(Nome, UserLog, Pass, DataNasc, Seccao) VALUES ";
-            sql += "(@nome, @user, cast(HASHBYTES('SHA1',@pass) as varchar), @data, @sec);";
+            string sql = "INSERT INTO Utilizadores(Nome, UserLog, Pass, Email, Telemovel, Seccao, Ativo) VALUES ";
+            sql += "(@nome, @user, cast(HASHBYTES('SHA1',@pass) as varchar), @email, @tel, @sec, @ati);";
             //parâmetros
             List<SqlParameter> parametros = new List<SqlParameter>()
             {
                 new SqlParameter() {ParameterName="@nome",SqlDbType=System.Data.SqlDbType.VarChar,Value= nome},
                 new SqlParameter() {ParameterName="@user",SqlDbType=System.Data.SqlDbType.VarChar,Value= user},
                 new SqlParameter() {ParameterName="@pass",SqlDbType=System.Data.SqlDbType.VarChar,Value= pass},
-                new SqlParameter() {ParameterName="@data",SqlDbType=System.Data.SqlDbType.DateTime,Value= data},
-                new SqlParameter() {ParameterName="@sec",SqlDbType=System.Data.SqlDbType.Int,Value= sec}
-            };
-            ExecutaComando(sql, parametros);
-        }
-
-        public void AdicionarPais(string nome, string pass, string email, int sec, int ativo)
-        {
-            string sql = "INSERT INTO Utilizadores(Nome, Pass, Email, Seccao, Ativo) VALUES (@nome, cast(HASHBYTES('SHA1',@pass) as varchar), @email, @sec, @ativo);";
-            //parâmetros
-            List<SqlParameter> parametros = new List<SqlParameter>()
-            {
-                new SqlParameter() {ParameterName="@nome",SqlDbType=System.Data.SqlDbType.VarChar,Value= nome},
-                new SqlParameter() {ParameterName="@pass",SqlDbType=System.Data.SqlDbType.VarChar,Value= pass},
                 new SqlParameter() {ParameterName="@email",SqlDbType=System.Data.SqlDbType.VarChar,Value= email},
+                new SqlParameter() {ParameterName="@tel",SqlDbType=System.Data.SqlDbType.Int,Value= tel},
                 new SqlParameter() {ParameterName="@sec",SqlDbType=System.Data.SqlDbType.Int,Value= sec},
-                new SqlParameter() {ParameterName="@ativo",SqlDbType=System.Data.SqlDbType.Int,Value= ativo}
+                new SqlParameter() {ParameterName="@ati",SqlDbType=System.Data.SqlDbType.Int,Value= ativo}
             };
             ExecutaComando(sql, parametros);
         }

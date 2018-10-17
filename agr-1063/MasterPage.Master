@@ -90,6 +90,7 @@
             </asp:ContentPlaceHolder>
 
             <br />
+            <br />
             <footer class="panel-footer">
                 <a href="Transferir.aspx">Regulamento Interno</a>
             </footer>

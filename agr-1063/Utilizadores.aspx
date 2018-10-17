@@ -32,45 +32,22 @@
                 </asp:gridview>
             </div>
         </div>
+        <hr />
+        <br />
         <br />
         <h2>Adicionar novo Utilizador</h2>
-        <table align="center" style="align-content: center; text-align: center" bordercolor="WHITE">
-            <tbody>
-                <tr>
-                    <td style="padding: 5px">Nome:
-                    </td>
-                    <td style="padding: 5px">
-                        <asp:textbox id="tbNome" runat="server" placeholder="Nome completo"></asp:textbox>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 5px">
-                        Data de Nascimento:
-                    </td>
-                    <td style="padding: 5px">
-                        <asp:textbox id="tbdata" runat="server" textmode="Date"></asp:textbox>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding: 5px">
-                        Secção:
-                    </td>
-                    <td style="padding: 5px">
-                        <asp:DropDownList ID="ddlsec" runat="server"  AutoPostBack="false"></asp:DropDownList>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <asp:label id="Label1" runat="server" text=""></asp:label>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="text-center" style="padding: 5px">
-                        <asp:button id="btnRegistar" runat="server" text="Adicionar" class="btn btn-primary" OnClick="btnRegistar_Click" />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <br />
+        Nome: <asp:textbox id="tbNome" runat="server" placeholder="Nome completo"></asp:textbox>
+        <br />
+        Email: <asp:textbox id="tbEmail" runat="server" placeholder="Email"></asp:textbox>  
+        <br />
+        Telemóvel: <asp:textbox id="tbTel" runat="server" placeholder="Telemóvel"></asp:textbox>         
+        <br />
+        Secção: <asp:DropDownList ID="ddlsec" runat="server"  AutoPostBack="false"></asp:DropDownList>            
+        <br />                
+        <asp:label id="Label1" runat="server" text=""></asp:label>        
+        <br />            
+        <asp:button id="btnRegistar" runat="server" text="Adicionar" class="btn btn-primary" OnClick="btnRegistar_Click" />      
         <br />
         <br />
     </div>

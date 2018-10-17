@@ -33,7 +33,7 @@ namespace agr_1063
                 }
                 else
                 {
-                    bd.AdicionarPais(nome, pass, email, sec, ativo);
+                    //bd.AdicionarPais(nome, pass, email, sec, ativo);
                     ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Aguarde pela aprovação do seu registo'); window.location.href = 'Index.aspx'", true);
                 }
             }

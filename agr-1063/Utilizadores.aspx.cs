@@ -361,18 +361,21 @@ namespace agr_1063
             {
                 string nome = Server.HtmlEncode(tbNome.Text);
                 string pass = "";
-                DateTime nasc = DateTime.Parse(tbdata.Text);
+                string email = Server.HtmlEncode(tbEmail.Text);
+                int tel = int.Parse(Server.HtmlEncode(tbTel.Text));
                 int sec = ddlsec.SelectedIndex;
+                int ativo = 1;
                 //User
                 string frst = nome.Split(' ').First();
                 string lst = nome.Split(' ').Last();
                 string user = lst.ToLower() + '.' + frst.ToLower();
                 //Adicionar na base de dados
-                bd.AdicionaEscuteiro(nome, user, pass, nasc, sec);
+                bd.AdicionaEscuteiro(nome, user, pass, email, tel, sec, ativo);
 
                 Response.Write("<script>alert('Utilizador inserido com sucesso')</script>");
                 tbNome.Text = string.Empty;
-                tbdata.Text = string.Empty;
+                tbEmail.Text = string.Empty;
+                tbTel.Text = string.Empty;
                 ddlsec.SelectedIndex = -1;
             }
             catch (Exception erro)

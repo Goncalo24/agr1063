@@ -32,9 +32,9 @@ namespace agr_1063
                 //login com sucesso
                 Session["id"] = utilizador.Rows[0][0].ToString();
                 Session["nome"] = utilizador.Rows[0][1].ToString();
-                Session["sec"] = utilizador.Rows[0][7].ToString();
-                Session["tipo"] = utilizador.Rows[0][8].ToString();
-                bool passconf = bool.Parse(utilizador.Rows[0][11].ToString());
+                Session["sec"] = utilizador.Rows[0][6].ToString();
+                Session["tipo"] = utilizador.Rows[0][7].ToString();
+                bool passconf = bool.Parse(utilizador.Rows[0][10].ToString());
                 if (passconf == false)
                 {
                     ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Altere a sua password'); window.location.href = 'Perfil.aspx'", true);
