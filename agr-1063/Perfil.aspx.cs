@@ -85,8 +85,6 @@ namespace agr_1063
                     linha[4] = Server.HtmlDecode(linha[4].ToString());
                 }
 
-                //Imagem
-                Image1.ImageUrl = "~/imagens/perfil/" + 1 + ".jpg";
                 //Nome
                 lblNome.Text = dados.Rows[0][1].ToString();
                 tbNome.Text = dados.Rows[0][1].ToString();
@@ -119,8 +117,6 @@ namespace agr_1063
                     linha[4] = Server.HtmlDecode(linha[4].ToString());
                 }
 
-                //Imagem
-                Image1.ImageUrl = "~/imagens/perfil/" + 1 + ".jpg";
                 //Nome
                 lblNome.Text = dados.Rows[0][1].ToString();
                 tbNome.Text = dados.Rows[0][1].ToString();

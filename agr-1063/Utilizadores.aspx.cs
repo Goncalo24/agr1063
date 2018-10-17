@@ -29,10 +29,16 @@ namespace agr_1063
                         ListItem primeiro = new ListItem("Selecione uma Secção", "-1");
                         ddlsec.Items.Add(primeiro);
 
-                        ddlsec.Items.Add("Lobitos");
-                        ddlsec.Items.Add("Exploradores");
-                        ddlsec.Items.Add("Pioneiros");
-                        ddlsec.Items.Add("Caminheiros");
+                        DataTable dados = bd.DevolveConsulta("SELECT Descricao FROM Seccao");
+                        int i = 0;
+
+                        foreach (DataRow linha in dados.Rows)
+                        {
+                            linha[0] = Server.HtmlDecode(linha[0].ToString());
+
+                            ddlsec.Items.Add(dados.Rows[i][0].ToString());
+                            i++;
+                        }
 
                         atualizaGrelha();
                         atualizaGrelha2();
