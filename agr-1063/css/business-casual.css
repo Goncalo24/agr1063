@@ -229,6 +229,8 @@ legend
     background-color: yellow;
     overflow: auto;
     margin-bottom: 2%;
+    float: left; 
+    width: 50%;
 }
 .not .img{
     background-color: transparent;
