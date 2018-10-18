@@ -44,8 +44,8 @@
                                 <a href="Faceis.aspx">FACEIS</a>
                             </li>
                             <%
-                                //Chefes
-                                if (Session["tipo"].Equals("0"))
+                                //Administrador
+                                if (Session["tipo"].Equals("3"))
                                 {%>
                             <li>
                                 <a href="Utilizadores.aspx">Utilizadores</a>

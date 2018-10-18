@@ -11,7 +11,6 @@ namespace agr_1063
     public partial class Perfil : System.Web.UI.Page
     {
         BaseDados bd = new BaseDados();
-        string strid;
         int userid;
         int id;
 
@@ -25,43 +24,47 @@ namespace agr_1063
                 }
                 else
                 {
-                    if (Request["id"] == null)
+                    try
                     {
-                        try
-                        {
-                            userid = int.Parse(Session["id"].ToString());
-                            btnEdit.Visible = true;
-                        }
-                        catch (Exception)
-                        {
-                            throw;
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            strid = Request["id"].ToString();
-                            id = int.Parse(strid);
+                        ListItem primeiro = new ListItem("Selecione uma Secção", "-1");
+                        ddlsec.Items.Add(primeiro);
+                        ListItem frst = new ListItem("Selecione um tipo de utilizador", "-1");
+                        ddltipo.Items.Add(frst);
 
-                            lblut.Visible = false;
-                            lblUser.Visible = false;
+                        DataTable dados = bd.DevolveConsulta("SELECT Descricao FROM Seccao");
+                        int i = 0;
+
+                        foreach (DataRow linha in dados.Rows)
+                        {
+                            linha[0] = Server.HtmlDecode(linha[0].ToString());
+
+                            ddlsec.Items.Add(dados.Rows[i][0].ToString());
+                            i++;
+                        }
+
+                        ddltipo.Items.Add("Escuteiro/Pai");
+                        ddltipo.Items.Add("Dirigente");
+                        ddltipo.Items.Add("Dirigente Secção");
+                        ddltipo.Items.Add("Administrador");
+
+                        if (Request["id"] == null)
+                        {
+                            id = int.Parse(Session["id"].ToString());
+                            lblTipo.Visible = false;
+                            ddltipo.Visible = false;
+                            btnAct.Visible = false;
+                        }
+                        else if (Session["tipo"].ToString() == "3")
+                        {
+                            userid = int.Parse(Request["id"].ToString());
+                            lblut.Visible = true;
+                            lblUser.Visible = true;
                             tbUser.Visible = false;
-                        }
-                        catch (Exception)
-                        {
-
-                            throw;
-                        }
-
-                        if (id != userid)
-                        {
-                            btnEdit.Visible = false;
-                        }
-                        else
-                        {
-                            btnEdit.Visible = true;
-                        }
+                        }                  
+                    }
+                    catch (Exception)
+                    {
+                        throw;
                     }
                     CarregaDados();
                 }
@@ -70,68 +73,75 @@ namespace agr_1063
 
         private void CarregaDados()
         {
-            if (id == 0)
+            DataTable dados;
+            if (userid == 0)
+                dados = bd.DevolveConsulta("SELECT * FROM Utilizadores WHERE IdUser= " + id);
+            else
+                dados = bd.DevolveConsulta("SELECT * FROM Utilizadores WHERE IdUser= " + userid);
+
+            if (dados == null) return;
+
+            foreach (DataRow linha in dados.Rows)
             {
-                userid = int.Parse(Session["id"].ToString());
+                linha[1] = Server.HtmlDecode(linha[1].ToString());
+                linha[2] = Server.HtmlDecode(linha[2].ToString());
+                linha[4] = Server.HtmlDecode(linha[4].ToString());
+            }
 
-                DataTable dados = bd.DevolveConsulta("SELECT * FROM Utilizadores WHERE IdUser= " + userid);
+            //Nome
+            lblNome.Text = dados.Rows[0][1].ToString();
+            tbNome.Text = dados.Rows[0][1].ToString();
+            //User
+            lblUser.Text = dados.Rows[0][2].ToString();
+            tbUser.Text = dados.Rows[0][2].ToString();
+            //Email
+            lblEmail.Text = dados.Rows[0][4].ToString();
+            tbEmail.Text = dados.Rows[0][4].ToString();
+            //Telemóvel
+            if (dados.Rows[0][5].ToString() != "0")
+            {
+                lblTel.Text = dados.Rows[0][5].ToString();
+            }
+            else
+                lblTel.Text = "";
+        }
 
-                if (dados == null) return;
-
-                foreach (DataRow linha in dados.Rows)
-                {
-                    linha[1] = Server.HtmlDecode(linha[1].ToString());
-                    linha[2] = Server.HtmlDecode(linha[2].ToString());
-                    linha[4] = Server.HtmlDecode(linha[4].ToString());
-                }
-
-                //Nome
-                lblNome.Text = dados.Rows[0][1].ToString();
-                tbNome.Text = dados.Rows[0][1].ToString();
-                //User
-                lblUser.Text = dados.Rows[0][2].ToString();
-                tbUser.Text = dados.Rows[0][2].ToString();
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (id != userid)
+            {
                 //Email
-                lblEmail.Text = dados.Rows[0][4].ToString();
-                tbEmail.Text = dados.Rows[0][4].ToString();
+                lblEmail.Visible = false;
+                tbEmail.Visible = true;
                 //Telemóvel
-                if (dados.Rows[0][5].ToString() != "0")
-                {
-                    lblTel.Text = dados.Rows[0][5].ToString();
-                }
-                else
-                    lblTel.Text = "";
-                tbTel.Text = dados.Rows[0][5].ToString();
+                lblTel.Visible = false;
+                tbTel.Visible = true;
+                //Secção
+                ddlsec.Enabled = true;
+                //Tipo
+                ddltipo.Enabled = true;
             }
             else
             {
-                id = int.Parse(strid);
-
-                DataTable dados = bd.DevolveConsulta("SELECT * FROM Utilizadores WHERE IdUser= " + id);
-
-                if (dados == null) return;
-
-                foreach (DataRow linha in dados.Rows)
-                {
-                    linha[1] = Server.HtmlDecode(linha[1].ToString());
-                    linha[4] = Server.HtmlDecode(linha[4].ToString());
-                }
-
                 //Nome
-                lblNome.Text = dados.Rows[0][1].ToString();
-                tbNome.Text = dados.Rows[0][1].ToString();
+                lblNome.Visible = false;
+                tbNome.Visible = true;
+                //User
+                lblUser.Visible = false;
+                tbUser.Visible = true;
                 //Email
-                lblEmail.Text = dados.Rows[0][4].ToString();
-                tbEmail.Text = dados.Rows[0][4].ToString();
+                lblEmail.Visible = false;
+                tbEmail.Visible = true;
                 //Telemóvel
-                if (dados.Rows[0][5].ToString() != "0")
-                {
-                    lblTel.Text = dados.Rows[0][5].ToString();
-                }
-                else
-                    lblTel.Text = "";
-                tbTel.Text = dados.Rows[0][5].ToString();
+                lblTel.Visible = false;
+                tbTel.Visible = true;
+                //Pass
+                lblPass.Visible = true;
+                tbPass.Visible = true;
             }
+            //Botões
+            btnGuardar.Visible = true;
+            btnEdit.Visible = false;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -187,28 +197,6 @@ namespace agr_1063
             {
                 lblErro.Text = "Não foi possível atualizar os seus dados";
             }
-        }
-
-        protected void btnEdit_Click(object sender, EventArgs e)
-        {
-            //Nome
-            lblNome.Visible = false;
-            tbNome.Visible = true;
-            //User
-            lblUser.Visible = false;
-            tbUser.Visible = true;
-            //Email
-            lblEmail.Visible = false;
-            tbEmail.Visible = true;
-            //Telemóvel
-            lblTel.Visible = false;
-            tbTel.Visible = true;
-            //Pass
-            lblPass.Visible = true;
-            tbPass.Visible = true;
-            //Botões
-            btnGuardar.Visible = true;
-            btnEdit.Visible = false;
         }
     }
 }
