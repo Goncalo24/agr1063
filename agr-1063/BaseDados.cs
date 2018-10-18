@@ -123,10 +123,10 @@ namespace agr_1063
             ExecutaComando(sql, parametros);
         }
 
-        public void AtualizarUtilizador(int Id, string nome, string user, string pass, string email, int tel, bool passconf)
+        public void AtualizarUtilizador(int Id, string nome, string user, string pass, string email, int tel, int sec, int tipo, bool passconf)
         {
             string sql = "UPDATE Utilizadores SET Nome= @nome, UserLog= @user, Pass= cast(HASHBYTES('SHA1',@pass) as varchar), ";
-            sql += "Email= @email, Telemovel= @tel, PassConf= @passconf  WHERE IdUser = @Id;";
+            sql += "Email= @email, Telemovel= @tel, Seccao= @sec, TipoUser= @tipo, PassConf= @passconf  WHERE IdUser = @Id;";
 
             //parametros
             List<SqlParameter> parametros = new List<SqlParameter>()
@@ -137,6 +137,8 @@ namespace agr_1063
                 new SqlParameter() {ParameterName = "@pass", SqlDbType = System.Data.SqlDbType.VarChar, Value = pass},
                 new SqlParameter() {ParameterName = "@email", SqlDbType = System.Data.SqlDbType.VarChar, Value = email},
                 new SqlParameter() {ParameterName = "@tel", SqlDbType = System.Data.SqlDbType.Int, Value = tel},
+                new SqlParameter() {ParameterName = "@sec", SqlDbType = System.Data.SqlDbType.Int, Value = sec},
+                new SqlParameter() {ParameterName = "@tipo", SqlDbType = System.Data.SqlDbType.Int, Value = tipo},
                 new SqlParameter() {ParameterName = "@passconf", SqlDbType = System.Data.SqlDbType.Bit, Value = passconf}
             };
             ExecutaComando(sql, parametros);

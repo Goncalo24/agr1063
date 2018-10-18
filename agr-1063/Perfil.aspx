@@ -83,7 +83,7 @@
                 </tr>
                 <tr>
                     <td style="padding: 5px; float:left">
-                        <asp:Button ID="btnAct" runat="server" Text="Desativar/Ativar Utilizador" class="btn btn-primary" />
+                        <asp:Button ID="btnAct" runat="server" Text="Desativar/Ativar Utilizador" Visible="false" class="btn btn-primary" />
                     </td>
                 </tr>
             </tbody>
