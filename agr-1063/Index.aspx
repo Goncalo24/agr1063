@@ -34,8 +34,17 @@
         </div>
     </div>   
     <br />
-    <div class="container text-center" style="background-color: #F8F8FF; opacity: 1">
-        <h1 style="text-align: center;">Bem Vindo!</h1>
+    <div class="container text-center"">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1 style="text-align: center; color: black">Bem Vindo!</h1>
         <br />
         <div style="overflow: auto">
             <!-- Div para os avisos/noticias -->

@@ -45,6 +45,7 @@ hr {
 }
 
 .navbar-brand {
+    overflow: auto;
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 2px;
@@ -170,7 +171,10 @@ footer p {
     .navbar-default {
         border: none;
         background: #fff;
-        background: rgba(255,255,255,0.9);
+        /*background: rgba(255,255,255,0.9);*/
+        background: #000000;
+        opacity: 0.7;
+        color: white;
     }
 
     .nav>li>a {
@@ -183,7 +187,7 @@ footer p {
 
     .navbar-nav {
         display: table;
-        float: none;
+        overflow: auto;
         margin: 0 auto;
         table-layout: fixed;
         font-size: 1.25em;
@@ -210,7 +214,7 @@ div.centre
     margin: 0;
     padding-left: 30%;
     padding-right: 30%;
-    background-color: #F8F8FF;
+    background-color: #CFCFCF;
     color: #C0C0C0;
 }
 legend
@@ -218,7 +222,7 @@ legend
     padding-top: 5%;
     margin: 0;
     text-align: left;
-    color: #C0C0C0;
+    color: black;
     font-weight: lighter;
     font-size: 26px;
 }
@@ -230,6 +234,7 @@ legend
     margin: 2%;
     float: left; 
     width: 46%;
+    height: 99%;;
 }
 .not .img{
     background-color: transparent;
@@ -246,27 +251,31 @@ legend
     margin: 0;
     float: left;
     padding: 2%;
-    width: 70%;
     text-align: left;
+    width: 99%;
+    height: 80%;
     word-wrap: break-word;
 }
 .not .txt .H{
     background-color: transparent;
     word-wrap: break-word;
-    color: white;
+    height:22%;
+    color: black;
 }
 .not .txt .Pa{
     background-color: transparent;
     word-wrap: break-word;
-    color: white;
+    height:78%;
+    color: black;
 }
 .fich{
     background-color: transparent;
     padding: 2%;
     margin: 0;
-    width: 18%;
     float: left;
+    width: 10%;
     min-width: 160px;
+    
 }
 .data{
     background-color: transparent;
@@ -274,8 +283,9 @@ legend
     float: left;
     padding: 2%;
     padding-top: 1%;
-    width: 78%;
-    text-align: center;
+    width: 99%;
+    height: 10%;
+    text-align: right;
     word-wrap: break-word;
 }
 

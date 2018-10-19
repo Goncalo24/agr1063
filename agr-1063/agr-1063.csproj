@@ -75,7 +75,9 @@
     <Content Include="img\carousel\DSC_0489.JPG" />
     <Content Include="img\carousel\DSC_0490.JPG" />
     <Content Include="img\favicon.ico" />
+    <Content Include="img\flor.png" />
     <Content Include="img\fundo.png" />
+    <Content Include="img\fundo1.png" />
     <Content Include="img\igre.png" />
     <Content Include="Transferir.aspx" />
     <Content Include="Ver_Aviso.aspx" />

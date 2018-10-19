@@ -10,80 +10,80 @@
     <script src="js/bootstrap.min.js"></script>
 
     <title>Agrupamento 1063 - Fragosela</title>
-    <link runat="server" rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
-    <link runat="server" rel="icon" href="img/favicon.ico" type="image/ico"/>
+    <link runat="server" rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link runat="server" rel="icon" href="img/favicon.ico" type="image/ico" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body id="body" runat="server">
     <!--<div class="brand">Comunidade 28</div>
-    <div class="aomddress-bar">Agrupamento 1063 | Fragosela </div>--> 
+    <div class="aomddress-bar">Agrupamento 1063 | Fragosela </div>-->
     <form id="form1" runat="server">
         <div>
             <!--Menu-->
-            <nav class="navbar navbar-default" style="opacity: 1">
-                <div class="container-fluid">
-                    <div class="collapse navbar-collapse" id="minhaBarra">
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <a href="Index.aspx">HOME</a>
-                            </li>
-                            <!--Login/Logout-->
-                            <%if (Session["nome"] == null)
-                                {%>
-                            <li>
-                                <a href="Login.aspx">Login</a>
-                            </li>
-                            <%}
-                                else
-                                {%>
-                            <li>
-                                <a href="Perfil.aspx">Perfil</a>
-                            </li>
-                            <li>
-                                <a href="Faceis.aspx">FACEIS</a>
-                            </li>
-                            <%
-                                //Administrador
-                                if (Session["tipo"].Equals("3"))
-                                {%>
-                            <li>
-                                <a href="Utilizadores.aspx">Utilizadores</a>
-                            </li>
-                            <li>
-                                <a href="Avisos.aspx">Avisos/Noticias</a>
-                            </li>
-                            <%}
-                                //Geral
-                                else if (Session["tipo"].Equals("1"))
-                                {
-                                    //lobitos
-                                    if (Session["sec"].Equals("1"))
-                                    {%>
-
-                            <%}
-                                //Exploradores
-                                else if (Session["sec"].Equals("2"))
+            <nav class="navbar navbar-default">
+                <div class="collapse navbar-collapse" id="minhaBarra" style="overflow: auto;">
+                    <ul class="nav navbar-nav" style="float: left">
+                        <li>
+                            <a href="Index.aspx"><img src="img/flor.png" /></a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav" style="overflow: auto; float: right">
+                        <!--Login/Logout-->
+                        <%if (Session["nome"] == null)
+                            {%>
+                        <li style="float: right">
+                            <a href="Login.aspx">Login</a>
+                        </li>
+                        <%}
+                            else
+                            {%>
+                        <li>
+                            <a href="Perfil.aspx">Perfil</a>
+                        </li>
+                        <li>
+                            <a href="Faceis.aspx">FACEIS</a>
+                        </li>
+                        <%
+                            //Administrador
+                            if (Session["tipo"].Equals("3"))
+                            {%>
+                        <li>
+                            <a href="Utilizadores.aspx">Utilizadores</a>
+                        </li>
+                        <li>
+                            <a href="Avisos.aspx">Avisos/Noticias</a>
+                        </li>
+                        <%}
+                            //Geral
+                            else if (Session["tipo"].Equals("1"))
+                            {
+                                //lobitos
+                                if (Session["sec"].Equals("1"))
                                 {%>
 
-                            <%}
-                                //Pioneiros
-                                else if (Session["sec"].Equals("3"))
-                                {%>
+                        <%}
+                            //Exploradores
+                            else if (Session["sec"].Equals("2"))
+                            {%>
 
-                            <%}
-                                //Caminheiros
-                                else if (Session["sec"].Equals("4"))
-                                {%>
+                        <%}
+                            //Pioneiros
+                            else if (Session["sec"].Equals("3"))
+                            {%>
 
-                            <%}%>
-                            <%}%>
-                            <li>
-                                <a href="Logout.aspx">Logout/Sair</a>
-                            </li>
-                            <%}%>
-                        </ul>
-                    </div>
+                        <%}
+                            //Caminheiros
+                            else if (Session["sec"].Equals("4"))
+                            {%>
+
+                        <%}%>
+                        <%}%>
+                        <li>
+                            <a href="Logout.aspx">Logout/Sair</a>
+                        </li>
+                        <%}%>
+                    </ul>
                 </div>
             </nav>
 
@@ -93,10 +93,11 @@
 
             <br />
             <br />
-            <footer class="panel-footer">
-                <a href="Transferir.aspx">Regulamento Interno</a>
+            <footer class="panel-footer" style="color: white; background-color:black">
+                <!--<a href="Transferir.aspx">Regulamento Interno</a>-->
+                <h6 style="float:right"><%= DateTime.Now.ToString(" dddd, dd, MMMM, yyyy") %></h6>
             </footer>
-           <!-- <div id="footer" class="panel-footer">
+            <!-- <div id="footer" class="panel-footer">
                 
             </div>-->
         </div>
