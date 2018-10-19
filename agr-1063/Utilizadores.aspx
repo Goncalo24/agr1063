@@ -47,7 +47,32 @@
         <br />                
         <asp:label id="Label1" runat="server" text=""></asp:label>        
         <br />            
-        <asp:button id="btnRegistar" runat="server" text="Adicionar" class="btn btn-primary" OnClick="btnRegistar_Click" />      
+        <asp:button id="btnRegistar" runat="server" text="Adicionar" class="btn btn-primary" OnClick="btnRegistar_Click" />   
+        <hr />   
+        <br />
+        <br />
+        <h1>Secções</h1>
+        <div class="table col-sm-4">
+            <asp:gridview id="GridView5" runat="server" cssclass="table active" OnSelectedIndexChanged="GridView5_SelectedIndexChanged">
+            </asp:gridview>
+        </div>
+        <br />
+        <br />
+        <h2>Adicionar Secção</h2>
+        <br />
+        Descrição: <asp:textbox id="txtDesc" runat="server" placeholder="Nome Secção"></asp:textbox>
+        <br />
+        Dirigente Responsável: <asp:DropDownList ID="ddlChefe" runat="server"  AutoPostBack="false"></asp:DropDownList>
+        <br />
+        Email: <asp:textbox id="txtEmSec" runat="server" placeholder="Email"></asp:textbox>  
+        <br />
+        Password: <asp:textbox id="txtPassSec" runat="server" placeholder="Password"></asp:textbox>         
+        <br />
+        <asp:label id="Label2" runat="server" text=""></asp:label>
+        <br />
+        <asp:button id="btnRegSec" runat="server" text="Adicionar" class="btn btn-primary" OnClick="btnRegSec_Click" />
+        <asp:button id="btnEdit" runat="server" text="Guardar" class="btn btn-primary" OnClick="btnEdit_Click" Enabled="False" />
+        <br />
         <br />
         <br />
     </div>

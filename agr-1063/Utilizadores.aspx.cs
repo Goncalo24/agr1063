@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,6 +13,8 @@ namespace agr_1063
     {
         BaseDados bd = new BaseDados();
         int id;
+        int row;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -26,6 +29,7 @@ namespace agr_1063
                     {
                         id = int.Parse(Session["id"].ToString());
 
+                        //Utilizadores
                         ListItem primeiro = new ListItem("Selecione uma Secção", "-1");
                         ddlsec.Items.Add(primeiro);
 
@@ -40,10 +44,26 @@ namespace agr_1063
                             i++;
                         }
 
+                        //Secção
+                        ListItem frst = new ListItem("Selecione um dirigente", "-1");
+                        ddlChefe.Items.Add(frst);
+
+                        DataTable dados2 = bd.DevolveConsulta("SELECT IdUser, Nome FROM Utilizadores WHERE TipoUser=2");
+                        int j = 0;
+
+                        foreach (DataRow linha in dados2.Rows)
+                        {
+                            linha[1] = Server.HtmlDecode(linha[1].ToString());
+
+                            ddlChefe.Items.Add(dados2.Rows[j][1].ToString());
+                            j++;
+                        }
+
                         atualizaGrelha();
                         atualizaGrelha2();
                         atualizaGrelha3();
                         atualizaGrelha4();
+                        atualizaGrelha5();
                     }
                     catch (Exception)
                     {
@@ -361,6 +381,54 @@ namespace agr_1063
             GridView4.DataBind();
         }
 
+        private void atualizaGrelha5()
+        {
+            DataTable dados = bd.DevolveConsulta("SELECT * FROM Seccao");
+            //limpar grelha
+            GridView5.Columns.Clear();
+
+            if (dados == null) return;
+
+            foreach (DataRow linha in dados.Rows)
+            {
+                linha[1] = Server.HtmlDecode(linha[1].ToString());
+                linha[2] = Server.HtmlDecode(linha[2].ToString());
+            }
+
+            //associar datatable
+            GridView5.DataSource = dados;
+            GridView5.AutoGenerateColumns = false;
+
+            //definir colunas
+            //id
+            BoundField bfId = new BoundField();
+            bfId.DataField = "IdSec";
+            bfId.HeaderText = "ID";
+            bfId.Visible = false;
+            GridView5.Columns.Add(bfId);
+
+            //Descrição
+            BoundField bfdesc = new BoundField();
+            bfdesc.DataField = "Descricao";
+            bfdesc.HeaderText = "Secção";
+            GridView5.Columns.Add(bfdesc);
+
+            //Dirigente
+            BoundField bfdir = new BoundField();
+            bfdir.DataField = "DirResp";
+            bfdir.HeaderText = "Dirigente";
+            GridView5.Columns.Add(bfdir);
+
+            //Email
+            BoundField bfemail = new BoundField();
+            bfemail.DataField = "Email";
+            bfemail.HeaderText = "Email";
+            GridView5.Columns.Add(bfemail);
+
+            //refresh da gridview
+            GridView5.DataBind();
+        }
+
         protected void btnRegistar_Click(object sender, EventArgs e)
         {
             try
@@ -391,6 +459,101 @@ namespace agr_1063
             }
             //atualiza Tabela
             atualizaGrelha();
+        }
+
+        protected void btnRegSec_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string desc = Server.HtmlEncode(txtDesc.Text);
+
+                DataTable dados = bd.DevolveConsulta("SELECT IdUser FROM Utilizadores WHERE TipoUser=2");
+                if (dados == null) return;
+
+                int idUser = int.Parse(dados.Rows[ddlChefe.SelectedIndex-1][0].ToString());
+                string email = Server.HtmlEncode(txtEmSec.Text);
+                string pass = Server.HtmlEncode(txtPassSec.Text);
+                //Adicionar na base de dados
+                bd.AdicionaSeccao(desc, idUser, email, pass);
+
+                Response.Write("<script>alert('Secção inserida com sucesso')</script>");
+                txtDesc.Text = string.Empty;
+                ddlChefe.SelectedIndex = -1;
+                txtEmSec.Text = string.Empty;
+                txtPassSec.Text = string.Empty;
+            }
+            catch (Exception erro)
+            {
+                Label2.Text = "Ocorreu o seguinte erro: " + erro.Message;
+                throw;
+            }
+            //atualiza Tabela
+            atualizaGrelha5();
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string desc = Server.HtmlEncode(txtDesc.Text);
+
+                DataTable dados = bd.DevolveConsulta("SELECT IdUser FROM Utilizadores WHERE Nome=" + ddlChefe.SelectedValue.ToString());
+                if (dados == null) return;
+
+                int idUser = int.Parse(dados.Rows[0][0].ToString());
+                string email = Server.HtmlEncode(txtEmSec.Text);
+                string pass = Server.HtmlEncode(txtPassSec.Text);
+                //Atualizar na base de dados
+                bd.AtualizarSeccao(row, desc, idUser, email, pass);
+
+                Response.Write("<script>alert('Secção inserida com sucesso')</script>");
+            }
+            catch (Exception erro)
+            {
+                Label2.Text = "Ocorreu o seguinte erro: " + erro.Message;
+                throw;
+            }
+
+            txtDesc.Text = string.Empty;
+            ddlChefe.SelectedIndex = -1;
+            txtEmSec.Text = string.Empty;
+            txtPassSec.Text = string.Empty;
+
+            btnRegSec.Enabled = true;
+            btnEdit.Enabled = false;
+
+            atualizaGrelha5();
+        }
+
+        protected void GridView5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            row = int.Parse(GridView5.SelectedIndex.ToString());
+
+            DataTable dados = bd.DevolveConsulta("SELECT * FROM Seccao WHERE IdSec=" + row);
+            if (dados == null) return;
+
+            foreach (DataRow linha in dados.Rows)
+            {
+                linha[1] = Server.HtmlDecode(linha[1].ToString());
+                linha[3] = Server.HtmlDecode(linha[3].ToString());
+                linha[4] = Server.HtmlDecode(linha[4].ToString());
+            }
+
+            DataTable dados2 = bd.DevolveConsulta("SELECT Nome FROM Utilizadores WHERE IdUser=" + int.Parse(dados.Rows[0][2].ToString()));
+            if (dados2 == null) return;
+
+            foreach (DataRow linha in dados2.Rows)
+            {
+                linha[0] = Server.HtmlDecode(linha[0].ToString());
+            }
+
+            txtDesc.Text = dados.Rows[0][1].ToString();
+            ddlChefe.SelectedValue = dados2.Rows[0][0].ToString();
+            txtEmSec.Text = dados.Rows[0][3].ToString();
+            txtPassSec.Text = dados.Rows[0][4].ToString();
+
+            btnRegSec.Enabled = false;
+            btnEdit.Enabled = true;
         }
     }
 }
