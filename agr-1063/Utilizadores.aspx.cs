@@ -525,8 +525,10 @@ namespace agr_1063
             atualizaGrelha5();
         }
 
-        protected void GridView5_SelectedIndexChanged(object sender, EventArgs e)
+        void GridView5_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*GridViewRow fila = GridView5.SelectedRow;
+            Label1.Text = "You selected " + fila.Cells[2].Text + ".";*/
             row = int.Parse(GridView5.SelectedIndex.ToString());
 
             DataTable dados = bd.DevolveConsulta("SELECT * FROM Seccao WHERE IdSec=" + row);

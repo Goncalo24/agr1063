@@ -53,7 +53,7 @@
         <br />
         <h1>Secções</h1>
         <div class="table col-sm-4">
-            <asp:gridview id="GridView5" runat="server" cssclass="table active" OnSelectedIndexChanged="GridView5_SelectedIndexChanged">
+            <asp:gridview id="GridView5" runat="server" cssclass="table active">
             </asp:gridview>
         </div>
         <br />
