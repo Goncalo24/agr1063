@@ -4,18 +4,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container" style="background-color: #CFCFCF">
-        <div class="log-reg" >
+        <div class="log-reg">
             <legend>Login</legend>
-            <asp:TextBox Style="margin-top:5%" align="center" ID="txtemail" runat="server" placeholder="User/Email" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox Style="margin-top: 5%" align="center" ID="txtemail" runat="server" placeholder="User/Email" CssClass="form-control"></asp:TextBox>
             <br />
-            <asp:TextBox  align="center" ID="txtpass" runat="server" placeholder="Password" TextMode="Password" CssClass="form-control">></asp:TextBox>
+            <asp:TextBox align="center" ID="txtpass" runat="server" placeholder="Password" TextMode="Password" CssClass="form-control">></asp:TextBox>
             <br />
             <asp:Label ForeColor="Black" ID="lblerro" runat="server" Text=""></asp:Label>
             <br />
             <br />
             <asp:Button ID="btnlogin" runat="server" Text="Login" class="form-control" OnClick="btnlogin_Click" />
             <br />
-            <asp:HyperLink Style="padding-left:45%" NavigateUrl="Registo.aspx" runat="server">Registar</asp:HyperLink>
+            <asp:Button ID="btnregistar" runat="server" Text="Registar" class="form-control" OnClick="btnregistar_Click" />
+            <br />
+            <br />
+            <asp:HyperLink Style="padding-left: 35%" runat="server">Recuperar Password</asp:HyperLink>
         </div>
         <br />
     </div>

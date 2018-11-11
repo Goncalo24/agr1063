@@ -49,5 +49,10 @@ namespace agr_1063
                 lblerro.Text = erro.Message;
             }
         }
+
+        protected void btnregistar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Registo.aspx");
+        }
     }
 }

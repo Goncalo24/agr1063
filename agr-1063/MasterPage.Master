@@ -23,12 +23,15 @@
             <!--Menu-->
             <nav class="navbar navbar-default">
                 <div class="collapse navbar-collapse" id="minhaBarra" style="overflow: auto;">
-                    <ul class="nav navbar-nav" style="float: left">
+                    <ul class="nav navbar-nav" style="float: left; padding-top: 0">
                         <li>
                             <a href="Index.aspx"><img src="img/flor.png" /></a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav" style="overflow: auto; float: right">
+                        <li>
+                            
+                        </li>
                         <!--Login/Logout-->
                         <%if (Session["nome"] == null)
                             {%>
