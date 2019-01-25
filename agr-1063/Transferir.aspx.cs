@@ -11,48 +11,56 @@ namespace agr_1063
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int type;
             if (!IsPostBack)
             {
-                if (Session["id"] == null)
+                type = int.Parse(Request["type"].ToString());
+                switch (type)
                 {
-                    try
-                    {
-                        string Filpath = Server.MapPath("~/ficheiros/REGULAMENTO INTERNO FINAL1063_15-10-2016.pdf");
-                        System.IO.FileInfo file = new System.IO.FileInfo(Filpath);
-                        if (file.Exists)
+                    case 1:
+                        try
                         {
-                            Response.Clear();
-                            Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name);
-                            Response.AddHeader("Content-Length", file.Length.ToString());
-                            Response.ContentType = "application/octet-stream"; // download […]
+                            string Filpath = Server.MapPath("~/ficheiros/REGULAMENTO_INTERNO.pdf");
+                            System.IO.FileInfo file = new System.IO.FileInfo(Filpath);
+                            if (file.Exists)
+                            {
+                                Response.Clear();
+                                Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name);
+                                Response.AddHeader("Content-Length", file.Length.ToString());
+                                Response.ContentType = "application/octet-stream"; // download […]
+                            }
                         }
-                    }
-                    catch (Exception)
-                    {
-                        return;
-                    }
-                    //Response.Redirect("Login.aspx");
-                }
-                else
-                {
-                    try
-                    {
-                        string nome = Request["name"].ToString();
+                        catch (Exception)
+                        {
+                            return;
+                        }
+                        break;
 
-                        string Filpath = Server.MapPath("~/ficheiros/" + nome);
-                        System.IO.FileInfo file = new System.IO.FileInfo(Filpath);
-                        if (file.Exists)
+                    default:
+                        if (Session["id"] == null)
+                            Response.Redirect("Login.aspx");
+                        else
                         {
-                            Response.Clear();
-                            Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name);
-                            Response.AddHeader("Content-Length", file.Length.ToString());
-                            Response.ContentType = "application/octet-stream"; // download […]
+                            try
+                            {
+                                string nome = Request["name"].ToString();
+
+                                string Filpath = Server.MapPath("~/ficheiros/" + nome);
+                                System.IO.FileInfo file = new System.IO.FileInfo(Filpath);
+                                if (file.Exists)
+                                {
+                                    Response.Clear();
+                                    Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name);
+                                    Response.AddHeader("Content-Length", file.Length.ToString());
+                                    Response.ContentType = "application/octet-stream"; // download […]
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                return;
+                            }
                         }
-                    }
-                    catch(Exception)
-                    {
-                        return;
-                    }
+                        break;
                 }
             }
         }

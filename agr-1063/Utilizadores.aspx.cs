@@ -72,6 +72,36 @@ namespace agr_1063
                     }
                 }
             }
+            else
+            {
+                int idsec = int.Parse(Request["idsec"].ToString());
+
+                DataTable dados = bd.DevolveConsulta("SELECT * FROM Seccao WHERE IdSec=" + idsec);
+                if (dados == null) return;
+
+                foreach (DataRow linha in dados.Rows)
+                {
+                    linha[1] = Server.HtmlDecode(linha[1].ToString());
+                    linha[3] = Server.HtmlDecode(linha[3].ToString());
+                    linha[4] = Server.HtmlDecode(linha[4].ToString());
+                }
+
+                DataTable dados2 = bd.DevolveConsulta("SELECT Nome FROM Utilizadores WHERE IdUser=" + int.Parse(dados.Rows[0][2].ToString()));
+                if (dados2 == null) return;
+
+                foreach (DataRow linha in dados2.Rows)
+                {
+                    linha[0] = Server.HtmlDecode(linha[0].ToString());
+                }
+
+                txtDesc.Text = dados.Rows[0][1].ToString();
+                ddlChefe.SelectedValue = dados2.Rows[0][0].ToString();
+                txtEmSec.Text = dados.Rows[0][3].ToString();
+                txtPassSec.Text = dados.Rows[0][4].ToString();
+
+                btnRegSec.Enabled = false;
+                btnEdit.Enabled = true;
+            }
         }
 
         private void atualizaGrelha()
@@ -400,6 +430,11 @@ namespace agr_1063
             GridView5.AutoGenerateColumns = false;
 
             //definir colunas
+            //adicionar coluna Ver Perfil   
+            DataColumn cButton = new DataColumn();
+            cButton.ColumnName = "Editar";
+            cButton.DataType = Type.GetType("System.String");
+            dados.Columns.Add(cButton);
             //id
             BoundField bfId = new BoundField();
             bfId.DataField = "IdSec";
@@ -424,6 +459,15 @@ namespace agr_1063
             bfemail.DataField = "Email";
             bfemail.HeaderText = "Email";
             GridView5.Columns.Add(bfemail);
+
+            //Ver Perfil
+            HyperLinkField lnkBtn = new HyperLinkField();
+            lnkBtn.HeaderText = "Editar";
+            lnkBtn.DataTextField = "Editar";
+            lnkBtn.Text = "Editar";
+            lnkBtn.DataNavigateUrlFormatString = "Utilizadores.aspx?idsec={0}";
+            lnkBtn.DataNavigateUrlFields = new string[] { "IdSec" };
+            GridView5.Columns.Add(lnkBtn);
 
             //refresh da gridview
             GridView5.DataBind();
@@ -523,39 +567,6 @@ namespace agr_1063
             btnEdit.Enabled = false;
 
             atualizaGrelha5();
-        }
-
-        void GridView5_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*GridViewRow fila = GridView5.SelectedRow;
-            Label1.Text = "You selected " + fila.Cells[2].Text + ".";*/
-            row = int.Parse(GridView5.SelectedIndex.ToString());
-
-            DataTable dados = bd.DevolveConsulta("SELECT * FROM Seccao WHERE IdSec=" + row);
-            if (dados == null) return;
-
-            foreach (DataRow linha in dados.Rows)
-            {
-                linha[1] = Server.HtmlDecode(linha[1].ToString());
-                linha[3] = Server.HtmlDecode(linha[3].ToString());
-                linha[4] = Server.HtmlDecode(linha[4].ToString());
-            }
-
-            DataTable dados2 = bd.DevolveConsulta("SELECT Nome FROM Utilizadores WHERE IdUser=" + int.Parse(dados.Rows[0][2].ToString()));
-            if (dados2 == null) return;
-
-            foreach (DataRow linha in dados2.Rows)
-            {
-                linha[0] = Server.HtmlDecode(linha[0].ToString());
-            }
-
-            txtDesc.Text = dados.Rows[0][1].ToString();
-            ddlChefe.SelectedValue = dados2.Rows[0][0].ToString();
-            txtEmSec.Text = dados.Rows[0][3].ToString();
-            txtPassSec.Text = dados.Rows[0][4].ToString();
-
-            btnRegSec.Enabled = false;
-            btnEdit.Enabled = true;
         }
     }
 }
