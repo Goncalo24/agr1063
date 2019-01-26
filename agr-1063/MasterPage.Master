@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/business-casual.css" rel="stylesheet" />
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -21,21 +21,32 @@
     <form id="form1" runat="server">
         <div>
             <!--Menu-->
-            <nav class="navbar navbar-default">
-                <div class="collapse navbar-collapse" id="minhaBarra" style="overflow: auto;">
-                    <ul class="nav navbar-nav" style="float: left; padding-top: 0">
+            <nav class="navbar navbar-default" style="margin: 0; padding-top: 0;">
+                <div class="collapse navbar-collapse" id="minhaBarra" style="overflow: auto; padding-top:0;h">
+                    <ul class="nav navbar-nav" style="float: left; padding-top: 0; margin: 0">
                         <li>
-                            <a href="Index.aspx"><img src="img/flor.png" /></a>
+                            <a style="margin: 0; padding-top: 2%; padding-bottom: 2%" href="Index.aspx"><img src="img/flor.png" /></a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav" style="overflow: auto; float: right">
                         <li>
-                            
+                            <div class="dropdown">
+                                 <button class="dropdown-toggle btn-drop" type="button" data-toggle="dropdown">
+                                    Escutismo
+                                </button>
+ 
+                                <div class="dropdown-content">
+                                    <a href="http://lobitos.escutismo.pt/">Lobitos</a>
+                                    <a href="http://exploradores-mocos.escutismo.pt/">Exploradores</a>
+                                    <a href="http://pioneiros-marinheiros.escutismo.pt/">Pioneiros</a>
+                                    <a href="http://caminheiros-companheiros.escutismo.pt/">Caminheiros</a>
+                                </div>
+                            </div>
                         </li>
                         <!--Login/Logout-->
                         <%if (Session["nome"] == null)
                             {%>
-                        <li style="float: right">
+                        <li style="float: right;">
                             <a href="Login.aspx">Login</a>
                         </li>
                         <%}
@@ -87,16 +98,6 @@
                         </li>
                         <%}%>
                     </ul>
-                        <div class="dropdowne">
-    <button class="dropbtn">Dropdown 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </div> 
                 </div>
             </nav>
 
