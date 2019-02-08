@@ -3522,10 +3522,8 @@ tbody.collapse.in {
   outline: 0;
 }
 .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
+  position: r-top-riradius: 0;
+  border-bottom-right-radius:::::;
   display: none;
   float: left;
   min-width: 160px;

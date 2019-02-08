@@ -324,7 +324,9 @@ legend
 }
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #000000;
+  color: white;
+  opacity: 1;
 }
 
 .dropdown:hover .dropdown-content{

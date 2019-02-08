@@ -63,10 +63,16 @@
                             if (Session["tipo"].Equals("3"))
                             {%>
                         <li>
-                            <a href="Utilizadores.aspx">Utilizadores</a>
-                        </li>
-                        <li>
-                            <a href="Avisos.aspx">Avisos/Noticias</a>
+                            <div class="dropdown" style="opacity: 1;">
+                                 <button class="dropdown-toggle btn-drop" type="button" data-toggle="dropdown">
+                                    Agrupamento
+                                </button>
+ 
+                                <div class="dropdown-content">
+                                    <a href="Utilizadores.aspx">Utilizadores</a>
+                                    <a href="Avisos.aspx">Avisos/Noticias</a>
+                                </div>
+                            </div>
                         </li>
                         <%}
                             //Geral
