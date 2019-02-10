@@ -72,36 +72,6 @@ namespace agr_1063
                     }
                 }
             }
-            else
-            {
-                int idsec = int.Parse(Request["idsec"].ToString());
-
-                DataTable dados = bd.DevolveConsulta("SELECT * FROM Seccao WHERE IdSec=" + idsec);
-                if (dados == null) return;
-
-                foreach (DataRow linha in dados.Rows)
-                {
-                    linha[1] = Server.HtmlDecode(linha[1].ToString());
-                    linha[3] = Server.HtmlDecode(linha[3].ToString());
-                    linha[4] = Server.HtmlDecode(linha[4].ToString());
-                }
-
-                DataTable dados2 = bd.DevolveConsulta("SELECT Nome FROM Utilizadores WHERE IdUser=" + int.Parse(dados.Rows[0][2].ToString()));
-                if (dados2 == null) return;
-
-                foreach (DataRow linha in dados2.Rows)
-                {
-                    linha[0] = Server.HtmlDecode(linha[0].ToString());
-                }
-
-                txtDesc.Text = dados.Rows[0][1].ToString();
-                ddlChefe.SelectedValue = dados2.Rows[0][0].ToString();
-                txtEmSec.Text = dados.Rows[0][3].ToString();
-                txtPassSec.Text = dados.Rows[0][4].ToString();
-
-                btnRegSec.Enabled = false;
-                btnEdit.Enabled = true;
-            }
         }
 
         private void atualizaGrelha()
@@ -465,7 +435,7 @@ namespace agr_1063
             lnkBtn.HeaderText = "Editar";
             lnkBtn.DataTextField = "Editar";
             lnkBtn.Text = "Editar";
-            lnkBtn.DataNavigateUrlFormatString = "Utilizadores.aspx?idsec={0}";
+            lnkBtn.DataNavigateUrlFormatString = "EditSeccao.aspx?idsec={0}";
             lnkBtn.DataNavigateUrlFields = new string[] { "IdSec" };
             GridView5.Columns.Add(lnkBtn);
 
@@ -516,15 +486,13 @@ namespace agr_1063
 
                 int idUser = int.Parse(dados.Rows[ddlChefe.SelectedIndex-1][0].ToString());
                 string email = Server.HtmlEncode(txtEmSec.Text);
-                string pass = Server.HtmlEncode(txtPassSec.Text);
                 //Adicionar na base de dados
-                bd.AdicionaSeccao(desc, idUser, email, pass);
+                bd.AdicionaSeccao(desc, idUser, email);
 
                 Response.Write("<script>alert('Secção inserida com sucesso')</script>");
                 txtDesc.Text = string.Empty;
                 ddlChefe.SelectedIndex = -1;
                 txtEmSec.Text = string.Empty;
-                txtPassSec.Text = string.Empty;
             }
             catch (Exception erro)
             {
@@ -532,40 +500,6 @@ namespace agr_1063
                 throw;
             }
             //atualiza Tabela
-            atualizaGrelha5();
-        }
-
-        protected void btnEdit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string desc = Server.HtmlEncode(txtDesc.Text);
-
-                DataTable dados = bd.DevolveConsulta("SELECT IdUser FROM Utilizadores WHERE Nome=" + ddlChefe.SelectedValue.ToString());
-                if (dados == null) return;
-
-                int idUser = int.Parse(dados.Rows[0][0].ToString());
-                string email = Server.HtmlEncode(txtEmSec.Text);
-                string pass = Server.HtmlEncode(txtPassSec.Text);
-                //Atualizar na base de dados
-                bd.AtualizarSeccao(row, desc, idUser, email, pass);
-
-                Response.Write("<script>alert('Secção inserida com sucesso')</script>");
-            }
-            catch (Exception erro)
-            {
-                Label2.Text = "Ocorreu o seguinte erro: " + erro.Message;
-                throw;
-            }
-
-            txtDesc.Text = string.Empty;
-            ddlChefe.SelectedIndex = -1;
-            txtEmSec.Text = string.Empty;
-            txtPassSec.Text = string.Empty;
-
-            btnRegSec.Enabled = true;
-            btnEdit.Enabled = false;
-
             atualizaGrelha5();
         }
     }

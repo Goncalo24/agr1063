@@ -218,12 +218,14 @@ div.centre
 }
 .log-reg
 {
+    text-align: left;
     margin: 0;
     padding-left: 30%;
     padding-right: 30%;
-    background-color: #CFCFCF;
-    color: #C0C0C0;
+    /*background-color: #CFCFCF;*/
+    color: inherit;
 }
+
 legend
 {
     padding-top: 5%;

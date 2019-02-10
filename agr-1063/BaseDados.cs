@@ -146,22 +146,21 @@ namespace agr_1063
         #endregion
 
         #region Secção
-        public void AdicionaSeccao(string desc, int dirresp, string email, string pass)
+        public void AdicionaSeccao(string desc, int dirresp, string email)
         {
             string sql = "INSERT INTO Seccao(Descricao, DirResp, Email, Pass) VALUES ";
-            sql += "(@desc, @dirresp, @email, cast(HASHBYTES('SHA1',@pass) as varchar));";
+            sql += "(@desc, @dirresp, @email);";
             //parâmetros
             List<SqlParameter> parametros = new List<SqlParameter>()
             {
                 new SqlParameter() {ParameterName="@desc",SqlDbType=System.Data.SqlDbType.VarChar,Value= desc},
                 new SqlParameter() {ParameterName="@dirresp",SqlDbType=System.Data.SqlDbType.Int,Value= dirresp},
-                new SqlParameter() {ParameterName="@email",SqlDbType=System.Data.SqlDbType.VarChar,Value= email},
-                new SqlParameter() {ParameterName="@pass",SqlDbType=System.Data.SqlDbType.VarChar,Value= pass}
+                new SqlParameter() {ParameterName="@email",SqlDbType=System.Data.SqlDbType.VarChar,Value= email}
             };
             ExecutaComando(sql, parametros);
         }
 
-        public void AtualizarSeccao(int id, string desc, int dirresp, string email, string pass)
+        public void AtualizarSeccao(int id, string desc, int dirresp, string email)
         {
             string sql = "UPDATE Seccao SET Descricao= @desc, DirResp= @dirresp, Email= @email, ";
             sql += "Pass= cast(HASHBYTES('SHA1',@pass) as varchar) WHERE IdSec = @Id;";
@@ -172,8 +171,7 @@ namespace agr_1063
                 new SqlParameter() {ParameterName = "@Id", SqlDbType = System.Data.SqlDbType.Int, Value = id},
                 new SqlParameter() {ParameterName = "@desc", SqlDbType = System.Data.SqlDbType.VarChar, Value = desc},
                 new SqlParameter() {ParameterName = "@dirresp", SqlDbType = System.Data.SqlDbType.Int, Value = dirresp},
-                new SqlParameter() {ParameterName = "@email", SqlDbType = System.Data.SqlDbType.VarChar, Value = email},
-                new SqlParameter() {ParameterName = "@pass", SqlDbType = System.Data.SqlDbType.VarChar, Value = pass}
+                new SqlParameter() {ParameterName = "@email", SqlDbType = System.Data.SqlDbType.VarChar, Value = email}
             };
             ExecutaComando(sql, parametros);
         }

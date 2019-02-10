@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="Aceitar_Rejeitar.aspx" />
     <Content Include="Ativar_Desativar.aspx" />
+    <Content Include="EditSeccao.aspx" />
     <Content Include="Faceis.aspx" />
     <Content Include="img\21942083_1966646150271569_343681478_n - Cópia.png" />
     <Content Include="img\carousel\DSC_0487.JPG" />
@@ -133,6 +134,13 @@
     </Compile>
     <Compile Include="Ativar_Desativar.aspx.designer.cs">
       <DependentUpon>Ativar_Desativar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditSeccao.aspx.cs">
+      <DependentUpon>EditSeccao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditSeccao.aspx.designer.cs">
+      <DependentUpon>EditSeccao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Faceis.aspx.cs">
       <DependentUpon>Faceis.aspx</DependentUpon>
