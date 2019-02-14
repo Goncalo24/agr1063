@@ -3,10 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div style="margin:0;">
+    <div style="margin: 0">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicadores -->
-       <!-- <ol class="carousel-indicators">
+            <!-- Indicadores -->
+            <!-- <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -32,9 +32,9 @@
             </div>
         </div>-->
         </div>
-    </div>   
+    </div>
     <br />
-    <div class="container text-center"">
+    <div class="container text-center">
         <br />
         <br />
         <br />
@@ -48,8 +48,13 @@
         <br />
         <div style="overflow: auto">
             <!-- Div para os avisos/noticias -->
-         <%:CarregarNoticias() %>  
+            <%:CarregarNoticias() %>
         </div>
         <br />
+    </div>
+    <div class="panel-footer" style="color: white; background-color: black; width: 100%">
+        <a href="Transferir.aspx?type=1">Regulamento Interno</a>
+        <a href="Contactos.aspx">Contactos</a>
+        <h6 style="float: right; margin-top: 3px; margin-bottom: 3px"><%= DateTime.Now.ToString(" dddd, dd, MMMM, yyyy") %></h6>
     </div>
 </asp:Content>

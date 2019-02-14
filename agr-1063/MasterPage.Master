@@ -22,19 +22,20 @@
         <div>
             <!--Menu-->
             <nav class="navbar navbar-default" style="margin: 0; padding-top: 0;">
-                <div class="collapse navbar-collapse" id="minhaBarra" style="overflow: auto; padding-top:0;h">
+                <div class="collapse navbar-collapse" id="minhaBarra" style="overflow: auto; padding-top: 0; h">
                     <ul class="nav navbar-nav" style="float: left; padding-top: 0; margin: 0">
                         <li>
-                            <a style="margin: 0; padding-top: 2%; padding-bottom: 2%" href="Index.aspx"><img src="img/flor.png" /></a>
+                            <a style="margin: 0; padding-top: 2%; padding-bottom: 2%" href="Index.aspx">
+                                <img src="img/flor.png" /></a>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav" style="overflow: auto; float: right">
                         <li>
                             <div class="dropdown">
-                                 <button class="dropdown-toggle btn-drop" type="button" data-toggle="dropdown">
+                                <button class="dropdown-toggle btn-drop" type="button" data-toggle="dropdown">
                                     Escutismo
                                 </button>
- 
+
                                 <div class="dropdown-content">
                                     <a href="http://lobitos.escutismo.pt/">Lobitos</a>
                                     <a href="http://exploradores-mocos.escutismo.pt/">Exploradores</a>
@@ -64,10 +65,10 @@
                             {%>
                         <li>
                             <div class="dropdown" style="opacity: 1;">
-                                 <button class="dropdown-toggle btn-drop" type="button" data-toggle="dropdown">
+                                <button class="dropdown-toggle btn-drop" type="button" data-toggle="dropdown">
                                     Agrupamento
                                 </button>
- 
+
                                 <div class="dropdown-content">
                                     <a href="Utilizadores.aspx">Utilizadores</a>
                                     <a href="Avisos.aspx">Avisos/Noticias</a>
@@ -110,16 +111,6 @@
             <!--Menu-->
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-
-            <br />
-            <br />
-            <footer class="panel-footer" style="color: white; background-color:black">
-                <a href="Transferir.aspx?type=1">Regulamento Interno</a>
-                <h6 style="float:right"><%= DateTime.Now.ToString(" dddd, dd, MMMM, yyyy") %></h6>
-            </footer>
-            <!-- <div id="footer" class="panel-footer">
-                
-            </div>-->
         </div>
     </form>
 </body>

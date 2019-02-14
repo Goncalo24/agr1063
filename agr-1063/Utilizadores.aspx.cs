@@ -381,6 +381,38 @@ namespace agr_1063
             GridView4.DataBind();
         }
 
+        protected void btnRegistar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nome = Server.HtmlEncode(tbNome.Text);
+                string pass = "";
+                string email = Server.HtmlEncode(tbEmail.Text);
+                int tel = int.Parse(Server.HtmlEncode(tbTel.Text));
+                int sec = ddlsec.SelectedIndex;
+                int ativo = 1;
+                //User
+                string frst = nome.Split(' ').First();
+                string lst = nome.Split(' ').Last();
+                string user = lst.ToLower() + '.' + frst.ToLower();
+                //Adicionar na base de dados
+                bd.AdicionaEscuteiro(nome, user, pass, email, tel, sec, ativo);
+
+                Response.Write("<script>alert('Utilizador inserido com sucesso')</script>");
+                tbNome.Text = string.Empty;
+                tbEmail.Text = string.Empty;
+                tbTel.Text = string.Empty;
+                ddlsec.SelectedIndex = -1;
+            }
+            catch (Exception erro)
+            {
+                Label1.Text = "Ocorreu o seguinte erro: " + erro.Message;
+                return;
+            }
+            //atualiza Tabela
+            atualizaGrelha();
+        }
+
         private void atualizaGrelha5()
         {
             DataTable dados = bd.DevolveConsulta("SELECT * FROM Seccao");
@@ -441,38 +473,6 @@ namespace agr_1063
 
             //refresh da gridview
             GridView5.DataBind();
-        }
-
-        protected void btnRegistar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string nome = Server.HtmlEncode(tbNome.Text);
-                string pass = "";
-                string email = Server.HtmlEncode(tbEmail.Text);
-                int tel = int.Parse(Server.HtmlEncode(tbTel.Text));
-                int sec = ddlsec.SelectedIndex;
-                int ativo = 1;
-                //User
-                string frst = nome.Split(' ').First();
-                string lst = nome.Split(' ').Last();
-                string user = lst.ToLower() + '.' + frst.ToLower();
-                //Adicionar na base de dados
-                bd.AdicionaEscuteiro(nome, user, pass, email, tel, sec, ativo);
-
-                Response.Write("<script>alert('Utilizador inserido com sucesso')</script>");
-                tbNome.Text = string.Empty;
-                tbEmail.Text = string.Empty;
-                tbTel.Text = string.Empty;
-                ddlsec.SelectedIndex = -1;
-            }
-            catch (Exception erro)
-            {
-                Label1.Text = "Ocorreu o seguinte erro: " + erro.Message;
-                return;
-            }
-            //atualiza Tabela
-            atualizaGrelha();
         }
 
         protected void btnRegSec_Click(object sender, EventArgs e)

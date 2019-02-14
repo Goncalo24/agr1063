@@ -5,6 +5,7 @@
  */
 
 body {
+    height: 100%;
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     background: url('../img/fundo.png');
     background-attachment: fixed; /*center*/ 
@@ -106,14 +107,14 @@ hr {
     margin: 0 auto 0;
 }
 
-footer {
+/*.modal-footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
     margin: 0;
     position: fixed;
     bottom: 0;
     width: 100%;
-}
+}*/
 
 footer p {
     margin: 0;
