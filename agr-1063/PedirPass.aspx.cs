@@ -34,7 +34,7 @@ namespace agr_1063
                 {
                     string pass = "24101998g";
                     mm.Subject = "Recuperar Password";
-                    mm.Body = "<h1>Link para Recuperação da Password \n<a href=\"http://agr1063.gear.host/Recuperar_Password.aspx?id={0}\"" + id + ">Recuperar</a>";
+                    mm.Body = "Link para Recuperação da Password \n \"http://agr1063.gear.host/Recuperar_Password.aspx?id={"+id+"}/";
 
                     mm.IsBodyHtml = false;
                     SmtpClient smtp = new SmtpClient();
@@ -47,6 +47,8 @@ namespace agr_1063
                     smtp.Send(mm);
                     ClientScript.RegisterStartupScript(GetType(), "alert", "alert('Email sent.');", true);
                 }
+
+                bd.executaComando("UPDATE Utilizadores SET PassConf= false WHERE IdUser=" + id);
             }
             catch (Exception)
             {

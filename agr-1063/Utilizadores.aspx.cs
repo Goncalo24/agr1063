@@ -13,7 +13,6 @@ namespace agr_1063
     {
         BaseDados bd = new BaseDados();
         int id;
-        int row;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -45,7 +44,7 @@ namespace agr_1063
                         }
 
                         //Secção
-                        ListItem frst = new ListItem("Selecione um dirigente", "-1");
+                        ListItem frst = new ListItem("Selecione um dirigente", "0");
                         ddlChefe.Items.Add(frst);
 
                         DataTable dados2 = bd.DevolveConsulta("SELECT IdUser, Nome FROM Utilizadores WHERE TipoUser=2");

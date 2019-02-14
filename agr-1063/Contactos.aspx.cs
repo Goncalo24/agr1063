@@ -27,27 +27,28 @@ namespace agr_1063
                 }
 
                 sec = int.Parse(dados.Rows[i][3].ToString());
+
                 switch (sec)
                 {
-                    case 0:
+                    case 1:
                         lblNomeLob.Text = dados.Rows[i][0].ToString();
                         tbTelLob.Text = dados.Rows[i][1].ToString();
                         tbEmailLob.Text = dados.Rows[i][2].ToString();
                         break;
-                    case 1:
-                        lblNomeExp.Text = dados.Rows[i][0].ToString();
-                        tbTel.Text = dados.Rows[i][1].ToString();
-                        tbEmail.Text = dados.Rows[i][2].ToString();
-                        break;
                     case 2:
-                        lblNomePio.Text = dados.Rows[i][0].ToString();
-                        tbTel.Text = dados.Rows[i][1].ToString();
-                        tbEmail.Text = dados.Rows[i][2].ToString();
+                        lblNomeExp.Text = dados.Rows[i][0].ToString();
+                        tbTelExp.Text = dados.Rows[i][1].ToString();
+                        tbEmailExp.Text = dados.Rows[i][2].ToString();
                         break;
                     case 3:
+                        lblNomePio.Text = dados.Rows[i][0].ToString();
+                        tbTelPio.Text = dados.Rows[i][1].ToString();
+                        tbEmailPio.Text = dados.Rows[i][2].ToString();
+                        break;
+                    case 4:
                         lblNomeCam.Text = dados.Rows[i][0].ToString();
-                        tbTel.Text = dados.Rows[i][1].ToString();
-                        tbEmail.Text = dados.Rows[i][2].ToString();
+                        tbTelCam.Text = dados.Rows[i][1].ToString();
+                        tbEmailCam.Text = dados.Rows[i][2].ToString();
                         break;
                     default:
                         break;
