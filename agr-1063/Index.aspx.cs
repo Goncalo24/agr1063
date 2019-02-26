@@ -33,7 +33,7 @@ namespace agr_1063
                 dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE Sec=" + Session["sec"] + " AND Sec=" + secf.ToString());
             }*/
             else
-                dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE Sec=6 ORDER BY idAviso DESC");
+                dados = bd.DevolveConsulta("SELECT * FROM Avisos WHERE Sec=5 ORDER BY idAviso DESC");
 
             if (dados == null)
             {

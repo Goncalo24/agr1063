@@ -386,8 +386,12 @@ namespace agr_1063
             {
                 string nome = Server.HtmlEncode(tbNome.Text);
                 string pass = "";
-                string email = Server.HtmlEncode(tbEmail.Text);
-                int tel = int.Parse(Server.HtmlEncode(tbTel.Text));
+                string email = "";
+                if (tbEmail.Text != string.Empty)
+                    Server.HtmlEncode(tbEmail.Text);
+                int tel = 0;
+                if (tel != 0)
+                    tel = int.Parse(Server.HtmlEncode(tbTel.Text));
                 int sec = ddlsec.SelectedIndex;
                 int ativo = 1;
                 //User
@@ -423,7 +427,6 @@ namespace agr_1063
             foreach (DataRow linha in dados.Rows)
             {
                 linha[1] = Server.HtmlDecode(linha[1].ToString());
-                linha[2] = Server.HtmlDecode(linha[2].ToString());
             }
 
             //associar datatable

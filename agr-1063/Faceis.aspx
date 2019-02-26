@@ -3,11 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container" style="background-color: #C0C0C0; opacity: 0.9" aria-busy="False">
+    <br />
+    <br />
+    <div class="container" style="background-color: #C0C0C0" aria-busy="False">
         <h1>FACEIS</h1>
         <br />
         <asp:Image ID="Image1" runat="server" />
-        <div class="panel-group" id="accordion">
+        <div >
             <%
                 //lobitos
                 if (Session["sec"].Equals("1"))
@@ -21,7 +23,7 @@
                 </div>
                 <div id="collapse1" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <div class="table col-sm-4">
+                        <div class="table">
                             <table style="color: white">
                                 <tr>
                                     <td style="border: 4px solid white; background-color: chartreuse; padding: 10px;">Cá defende Máugli dos Bândarlougues.
@@ -1105,7 +1107,7 @@
                 </div>
                 <div id="collapse19" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <div class="table col-sm-4">
+                        <div class="table">
                             <table style="color: white">
                                 <tr>
                                     <td style="border: 4px solid white; background-color: chartreuse; padding: 10px;">Desempenho.
@@ -1158,7 +1160,7 @@
                 </div>
                 <div id="collapse20" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <div class="table col-sm-4">
+                        <div class="table">
                             <table style="color: white">
                                 <tr>
                                     <td style="border: 4px solid white; background-color: red; padding: 10px;">Relacionamento e sensibilidade
@@ -1211,7 +1213,7 @@
                 </div>
                 <div id="collapse21" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <div class="table col-sm-4">
+                        <div class="table">
                             <table style="color: white">
                                 <tr>
                                     <td style="border: 4px solid white; background-color: blue; padding: 10px;">Autonomia
@@ -1272,7 +1274,7 @@
                 </div>
                 <div id="collapse22" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <div class="table col-sm-4">
+                        <div class="table">
                             <table style="color: white">
                                 <tr>
                                     <td style="border: 4px solid white; background-color: fuchsia; padding: 10px;">Descoberta
@@ -1333,7 +1335,7 @@
                 </div>
                 <div id="collapse23" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <div class="table col-sm-4">
+                        <div class="table">
                             <table style="color: white">
                                 <tr>
                                     <td style="border: 4px solid white; background-color: orange; padding: 10px;">Procura do conhecimento
@@ -1390,7 +1392,7 @@
                 </div>
                 <div id="collapse24" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <div class="table col-sm-4">
+                        <div class="table">
                             <table style="color: white">
                                 <tr>
                                     <td style="border: 4px solid white; background-color: gold; padding: 10px;">Exercer activamente cidadania

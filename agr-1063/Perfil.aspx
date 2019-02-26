@@ -3,9 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container" style="background-color: black">
-        <br />
-        <table align="center" style="background-color:white;">
+    <br />
+    <br />
+    <div class="container" style="background-color: #C0C0C0">
+        <table align="center">
             <tbody>
                 <tr>
                     <td style="padding: 5px; float:left">
