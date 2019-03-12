@@ -51,7 +51,7 @@ namespace agr_1063
                     linha[3] = Server.HtmlDecode(linha[3].ToString());
                     linha[5] = Server.HtmlDecode(linha[5].ToString());
 
-                    conteudo += "<div class='not'>";
+                    conteudo += "<div class='col-xs-12 col-sm col-md-6 col-lg-6 not'>";
                     //conteudo += "<div class='not img'> <img src='Imagens/news/" + dados.Rows[i][0] + ".ico'></div>";
                     conteudo += "<div class='not txt'> <h3 class='not txt H'>" + dados.Rows[i][2].ToString() + "</h3> <p class='not txt Pa'>" + dados.Rows[i][3] + "</p></div>";
                     if (linha[5].ToString() != " " && linha[5].ToString() != null)

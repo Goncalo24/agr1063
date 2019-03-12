@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container text-center">
+    <div class="container-fluid text-center">
         <br />
         <br />
         <br />
@@ -15,7 +15,7 @@
         <br />
         <h1 style="text-align: center; color: black">Bem Vindo!</h1>
         <br />
-        <div style="overflow: auto">
+        <div class="row">
             <!-- Div para os avisos/noticias -->
             <%:CarregarNoticias() %>
         </div>
