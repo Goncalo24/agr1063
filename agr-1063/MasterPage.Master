@@ -21,97 +21,103 @@
     <form id="form1" runat="server">
         <div>
             <!--Menu-->
-            <nav class="navbar navbar-default" style="margin: 0; padding-top: 0;">
-                <div class="collapse navbar-collapse" id="minhaBarra" style="overflow: auto; padding-top: 0; h">
-                    <ul class="nav navbar-nav" style="float: left; padding-top: 0; margin: 0">
-                        <li>
-                            <a style="margin: 0; padding-top: 2%; padding-bottom: 2%" href="Index.aspx">
-                                <img src="img/flor.png" /></a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav" style="overflow: auto; float: right">
-                        <li>
-                            <div class="dropdown">
-                                <button class="dropdown-toggle btn-drop" type="button" data-toggle="dropdown">
-                                    Escutismo
-                                </button>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="Index.aspx">
+                            <img src="img/flor.png" /></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav" style="overflow: auto; float: right">
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle btn-drop" type="button" data-toggle="dropdown">
+                                        Escutismo
+                                    </button>
 
-                                <div class="dropdown-content">
-                                    <a href="http://lobitos.escutismo.pt/">Lobitos</a>
-                                    <a href="http://exploradores-mocos.escutismo.pt/">Exploradores</a>
-                                    <a href="http://pioneiros-marinheiros.escutismo.pt/">Pioneiros</a>
-                                    <a href="http://caminheiros-companheiros.escutismo.pt/">Caminheiros</a>
+                                    <div class="dropdown-content">
+                                        <a href="http://lobitos.escutismo.pt/">Lobitos</a>
+                                        <a href="http://exploradores-mocos.escutismo.pt/">Exploradores</a>
+                                        <a href="http://pioneiros-marinheiros.escutismo.pt/">Pioneiros</a>
+                                        <a href="http://caminheiros-companheiros.escutismo.pt/">Caminheiros</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <!--Login/Logout-->
-                        <%if (Session["nome"] == null)
-                            {%>
-                        <li style="float: right;">
-                            <a href="Login.aspx">Login</a>
-                        </li>
-                        <%}
-                            else
-                            {%>
-                        <li>
-                            <a href="Perfil.aspx">Perfil</a>
-                        </li>
-                        <li>
-                            <a href="Faceis.aspx">FACEIS</a>
-                        </li>
-                        <%
-                            //Administrador
-                            if (Session["tipo"].Equals("3"))
-                            {%>
-                        <li>
-                            <div class="dropdown" style="opacity: 1;">
-                                <button class="dropdown-toggle btn-drop" type="button" data-toggle="dropdown">
-                                    Agrupamento
-                                </button>
+                            </li>
+                            <!--Login/Logout-->
+                            <%if (Session["nome"] == null)
+                                {%>
+                            <li style="float: right;">
+                                <a href="Login.aspx">Login</a>
+                            </li>
+                            <%}
+                                else
+                                {%>
+                            <li>
+                                <a href="Perfil.aspx">Perfil</a>
+                            </li>
+                            <li>
+                                <a href="Faceis.aspx">FACEIS</a>
+                            </li>
+                            <%
+                                //Administrador
+                                if (Session["tipo"].Equals("3"))
+                                {%>
+                            <li>
+                                <div class="dropdown" style="opacity: 1;">
+                                    <button class="dropdown-toggle btn-drop" type="button" data-toggle="dropdown">
+                                        Agrupamento
+                                    </button>
 
-                                <div class="dropdown-content">
-                                    <a href="Utilizadores.aspx">Utilizadores</a>
-                                    <a href="Avisos.aspx">Avisos/Noticias</a>
+                                    <div class="dropdown-content">
+                                        <a href="Utilizadores.aspx">Utilizadores</a>
+                                        <a href="Avisos.aspx">Avisos/Noticias</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <%}
-                            //Geral
-                            else if (Session["tipo"].Equals("1"))
-                            {
-                                //lobitos
-                                if (Session["sec"].Equals("1"))
+                            </li>
+                            <%}
+                                //Geral
+                                else if (Session["tipo"].Equals("1"))
+                                {
+                                    //lobitos
+                                    if (Session["sec"].Equals("1"))
+                                    {%>
+
+                            <%}
+                                //Exploradores
+                                else if (Session["sec"].Equals("2"))
                                 {%>
 
-                        <%}
-                            //Exploradores
-                            else if (Session["sec"].Equals("2"))
-                            {%>
+                            <%}
+                                //Pioneiros
+                                else if (Session["sec"].Equals("3"))
+                                {%>
 
-                        <%}
-                            //Pioneiros
-                            else if (Session["sec"].Equals("3"))
-                            {%>
+                            <%}
+                                //Caminheiros
+                                else if (Session["sec"].Equals("4"))
+                                {%>
 
-                        <%}
-                            //Caminheiros
-                            else if (Session["sec"].Equals("4"))
-                            {%>
-
-                        <%}%>
-                        <%}%>
-                        <li>
-                            <a href="Logout.aspx">Logout/Sair</a>
-                        </li>
-                        <%}%>
-                    </ul>
+                            <%}%>
+                            <%}%>
+                            <li>
+                                <a href="Logout.aspx">Logout/Sair</a>
+                            </li>
+                            <%}%>
+                        </ul>
+                    </div>
                 </div>
             </nav>
 
             <!--Menu-->
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
         </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
     </form>
 </body>
 </html>
